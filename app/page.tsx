@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
-import { Card } from '@/components/design-system/Card';
 import { 
   Calculator, 
   LineChart, 
@@ -15,7 +14,9 @@ import {
   Target,
   TrendingUp,
   Lightbulb,
-  CheckCircle2
+  ArrowRight,
+  CheckCircle2,
+  ExternalLink
 } from 'lucide-react';
 
 interface Resource {
@@ -25,7 +26,7 @@ interface Resource {
   icon: React.ElementType;
   href: string;
   isExternal?: boolean;
-  accentColor: 'primary' | 'gold' | 'navy' | 'blue' | 'green';
+  category: 'Tools' | 'Guides' | 'Resources';
   completed?: boolean;
 }
 
@@ -37,7 +38,7 @@ const resources: Resource[] = [
     icon: Calculator,
     href: 'https://saasvaluation.livmo.com/',
     isExternal: true,
-    accentColor: 'primary',
+    category: 'Tools',
   },
   {
     id: 'saas-metrics',
@@ -46,7 +47,7 @@ const resources: Resource[] = [
     icon: LineChart,
     href: 'https://go.livmo.com/hubfs/The_SaaS_Exit_Valuation_Guide-Fundamentals_Metrics_and_Drivers.pdf',
     isExternal: true,
-    accentColor: 'blue',
+    category: 'Resources',
   },
   {
     id: 'sellability-checklist',
@@ -55,7 +56,7 @@ const resources: Resource[] = [
     icon: ClipboardCheck,
     href: 'https://go.livmo.com/hubfs/Livmo%20-%20Business%20Owner%20Sellability%20Checklist%20-%20Regular%20Business.pdf',
     isExternal: true,
-    accentColor: 'green',
+    category: 'Resources',
   },
   {
     id: 'financial-reporting',
@@ -63,7 +64,7 @@ const resources: Resource[] = [
     description: 'Boost your valuation with accurate financial statements. Templates, checklists, and workflows included.',
     icon: FileText,
     href: '/financial-reporting',
-    accentColor: 'gold',
+    category: 'Guides',
   },
   {
     id: 'legal-due-diligence',
@@ -71,7 +72,7 @@ const resources: Resource[] = [
     description: 'Checklists and trackers for corporate docs, IP filings, contracts, and common gap clean-up workflows.',
     icon: Scale,
     href: '/legal-due-diligence',
-    accentColor: 'navy',
+    category: 'Guides',
   },
   {
     id: 'hiring-operations',
@@ -79,7 +80,7 @@ const resources: Resource[] = [
     description: 'Gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies.',
     icon: Users,
     href: '/hiring-operations',
-    accentColor: 'primary',
+    category: 'Guides',
   },
   {
     id: 'buyer-profile',
@@ -87,7 +88,7 @@ const resources: Resource[] = [
     description: 'Understand strategic buyers, PE firms, and corporate acquirers—what they value and typical pitfalls.',
     icon: Target,
     href: '/buyer-profile',
-    accentColor: 'blue',
+    category: 'Guides',
   },
   {
     id: 'ma-process',
@@ -95,7 +96,7 @@ const resources: Resource[] = [
     description: 'Stage-by-stage guide from teaser to close, with common deal-killer traps and momentum tips.',
     icon: TrendingUp,
     href: '/ma-process',
-    accentColor: 'gold',
+    category: 'Guides',
   },
   {
     id: 'cash-cow-hacks',
@@ -103,7 +104,7 @@ const resources: Resource[] = [
     description: 'Practical strategies to transform your lifestyle business into an attractive acquisition target.',
     icon: Lightbulb,
     href: '/cash-cow-hacks',
-    accentColor: 'green',
+    category: 'Guides',
   },
 ];
 
@@ -134,97 +135,158 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-livmo-primary to-livmo-navy text-white py-20 lg:py-28">
-        <Container>
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-headline mb-6">
-              Your Complete Exit Readiness Academy
+      {/* Hero Section - Corporate Fintech Style */}
+      <section className="relative bg-livmo-navy text-white py-24 lg:py-32 overflow-hidden">
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-livmo-navy via-livmo-navy to-livmo-primary opacity-90"></div>
+
+        <Container className="relative z-10">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center px-3 py-1 bg-white/10 border border-white/20 rounded-md text-sm font-medium mb-6">
+              <span className="text-livmo-gold">●</span>
+              <span className="ml-2">Exit Readiness Platform</span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-headline mb-6 tracking-tight">
+              Build Value.
+              <br />
+              <span className="text-livmo-gold">Exit Smart.</span>
             </h1>
-            <p className="text-xl sm:text-2xl mb-4 text-blue-100">
-              Exit NOW or Exit LATER
-            </p>
-            <p className="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
-              Whether you're preparing for an immediate exit or building long-term value, 
-              everything you need to maximize your business valuation is here.
+            
+            <p className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
+              Whether you're planning an exit now or building long-term value, 
+              get the tools, frameworks, and insights used by top M&A advisors.
             </p>
 
-            {/* Progress Bar */}
-            {completedResources.size > 0 && (
-              <div className="mt-10 bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-md mx-auto">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium">Your Progress</span>
-                  <span className="text-sm font-bold">{completionPercentage}%</span>
-                </div>
-                <div className="w-full bg-white/20 rounded-full h-3">
-                  <div
-                    className="bg-livmo-gold h-3 rounded-full transition-all duration-500"
-                    style={{ width: `${completionPercentage}%` }}
-                  />
-                </div>
-                <p className="text-xs text-blue-100 mt-2">
-                  {completedResources.size} of {resources.length} resources completed
-                </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link
+                href="#resources"
+                className="inline-flex items-center justify-center px-6 py-3 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-all duration-150"
+              >
+                Explore Resources
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <Link
+                href="https://go.livmo.com/meetings/go-livmo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white/30 text-white font-semibold rounded-md hover:bg-white/5 transition-all duration-150"
+              >
+                Book Consultation
+              </Link>
+            </div>
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+              <div>
+                <div className="text-3xl font-bold text-livmo-gold mb-1">9</div>
+                <div className="text-sm text-gray-400">Expert Resources</div>
               </div>
-            )}
+              <div>
+                <div className="text-3xl font-bold text-livmo-gold mb-1">{completionPercentage}%</div>
+                <div className="text-sm text-gray-400">Your Progress</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-livmo-gold mb-1">100%</div>
+                <div className="text-sm text-gray-400">Free Access</div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
+      {/* Progress Section - Data Viz Style */}
+      {completedResources.size > 0 && (
+        <section className="py-8 bg-gray-50 border-y border-gray-200">
+          <Container>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-md bg-green-100 flex items-center justify-center">
+                  <CheckCircle2 className="h-6 w-6 text-green-600" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-gray-600">Learning Progress</div>
+                  <div className="text-lg font-semibold text-livmo-navy">
+                    {completedResources.size} of {resources.length} completed
+                  </div>
+                </div>
+              </div>
+              <div className="hidden md:flex items-center gap-3">
+                <div className="w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-livmo-gold transition-all duration-500 ease-out"
+                    style={{ width: `${completionPercentage}%` }}
+                  />
+                </div>
+                <span className="text-sm font-semibold text-livmo-navy w-12 text-right">
+                  {completionPercentage}%
+                </span>
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* Resources Grid */}
-      <section className="py-16 lg:py-24 bg-livmo-light-neutral">
+      <section id="resources" className="py-20 lg:py-28 bg-white">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headline text-livmo-navy mb-4">
-              Learning Resources
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold font-headline text-livmo-navy mb-4 tracking-tight">
+              Exit Readiness Resources
             </h2>
-            <p className="text-lg text-livmo-body max-w-2xl mx-auto">
-              Comprehensive guides, tools, and templates to prepare your business for a successful exit
+            <p className="text-lg text-gray-600">
+              Comprehensive guides, interactive tools, and proven frameworks to prepare your business for a successful exit.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {resources.map((resource, index) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {resources.map((resource) => {
               const Icon = resource.icon;
               const isCompleted = completedResources.has(resource.id);
 
               return (
-                <div key={resource.id} className="relative group">
-                  <Card
-                    variant="top-accent"
-                    accentColor={resource.accentColor}
-                    hover={true}
-                    animate={true}
-                    delay={index * 0.1}
-                    className="h-full flex flex-col"
-                  >
-                    {/* Completion Checkbox */}
-                    <button
-                      onClick={() => toggleCompletion(resource.id)}
-                      className="absolute top-4 right-4 z-10"
-                      aria-label={isCompleted ? 'Mark as incomplete' : 'Mark as complete'}
-                    >
-                      <CheckCircle2
-                        className={`h-6 w-6 transition-colors duration-200 ${
-                          isCompleted
-                            ? 'text-green-500 fill-green-500'
-                            : 'text-gray-300 hover:text-green-500'
-                        }`}
-                      />
-                    </button>
+                <div key={resource.id} className="group">
+                  <div className="relative h-full p-6 bg-white border border-gray-200 rounded-lg hover:border-livmo-primary hover:shadow-lg transition-all duration-200">
+                    {/* Category Badge */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded">
+                        {resource.category}
+                      </span>
+                      
+                      {/* Completion Checkbox */}
+                      <button
+                        onClick={() => toggleCompletion(resource.id)}
+                        className="transition-transform duration-150 hover:scale-110"
+                        aria-label={isCompleted ? 'Mark as incomplete' : 'Mark as complete'}
+                      >
+                        <CheckCircle2
+                          className={`h-5 w-5 transition-colors duration-200 ${
+                            isCompleted
+                              ? 'text-green-500 fill-green-500'
+                              : 'text-gray-300 hover:text-gray-400'
+                          }`}
+                        />
+                      </button>
+                    </div>
 
                     {/* Icon */}
                     <div className="mb-4">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-livmo-primary/10">
-                        <Icon className="h-6 w-6 text-livmo-primary" />
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-md bg-livmo-navy text-white">
+                        <Icon className="h-6 w-6" />
                       </div>
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-headline font-bold text-livmo-navy mb-3">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-3 group-hover:text-livmo-primary transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-livmo-body mb-6 flex-1">
+                    <p className="text-gray-600 mb-6 text-sm leading-relaxed">
                       {resource.description}
                     </p>
 
@@ -232,24 +294,16 @@ export default function Home() {
                     <Link
                       href={resource.href}
                       {...(resource.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-200"
+                      className="inline-flex items-center text-sm font-semibold text-livmo-primary hover:text-livmo-navy transition-colors duration-150"
                     >
-                      {resource.isExternal ? 'Access Resource' : 'Learn More'}
-                      <svg
-                        className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      {resource.isExternal ? 'Access Resource' : 'View Guide'}
+                      {resource.isExternal ? (
+                        <ExternalLink className="ml-1.5 h-4 w-4" />
+                      ) : (
+                        <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                      )}
                     </Link>
-                  </Card>
+                  </div>
                 </div>
               );
             })}
@@ -258,27 +312,31 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-20 bg-livmo-gold">
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold font-headline text-livmo-navy mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold font-headline mb-4 tracking-tight">
               Ready to Maximize Your Exit Value?
             </h2>
-            <p className="text-lg text-livmo-navy/80 mb-8">
-              Schedule a consultation with our exit planning experts to discuss your specific situation.
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              Get personalized guidance from our M&A advisors. Schedule a free consultation to discuss your exit strategy.
             </p>
             <Link
               href="https://go.livmo.com/meetings/go-livmo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-8 py-4 bg-livmo-navy text-white font-semibold rounded-lg hover:bg-livmo-navy/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-lg"
+              className="inline-flex items-center px-8 py-4 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-all duration-150 text-lg shadow-lg"
             >
-              Book Your Free Consultation
+              Book Free Consultation
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
+            
+            <p className="mt-6 text-sm text-gray-400">
+              No sales pitch. Just actionable insights for your business.
+            </p>
           </div>
         </Container>
       </section>
     </Layout>
   );
 }
-
