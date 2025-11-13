@@ -83,11 +83,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/universal-assets/accents/19.png', sizes: '32x32', type: 'image/png' },
-      { url: '/universal-assets/accents/19.png', sizes: '16x16', type: 'image/png' },
+      { url: '/universal-assets/images/arrow-only-blue-transparent.png', sizes: '32x32', type: 'image/png' },
+      { url: '/universal-assets/images/arrow-only-blue-transparent.png', sizes: '16x16', type: 'image/png' },
     ],
-    apple: '/universal-assets/accents/19.png',
-    shortcut: '/universal-assets/accents/19.png',
+    apple: '/universal-assets/images/arrow-only-blue-transparent.png',
+    shortcut: '/universal-assets/images/arrow-only-blue-transparent.png',
   },
   verification: {
     google: 'your-google-verification-code', // User should add their actual code
