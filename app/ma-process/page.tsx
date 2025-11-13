@@ -52,12 +52,12 @@ export default function MAProcessPage() {
       <StructuredData data={learningResourceSchema} />
       <Layout>
         {/* Hero Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-gold/90 to-livmo-primary text-white">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white">
           <Container>
             <div className="max-w-4xl mx-auto">
               <Link
                 href="/"
-                className="inline-flex items-center text-livmo-navy hover:text-white transition-colors mb-8"
+                className="inline-flex items-center text-blue-100 hover:text-white transition-colors mb-8"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
@@ -72,7 +72,7 @@ export default function MAProcessPage() {
                 </h1>
               </div>
               
-              <p className="text-xl text-livmo-navy">
+              <p className="text-xl text-blue-100">
                 Navigate every stage from teaser to close with confidence. Learn deal-killer traps and momentum-building strategies.
               </p>
             </div>
