@@ -1,30 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
-import { Container} from '@/components/layout/Container';
-import { Card } from '@/components/design-system/Card';
-import { Users, ArrowLeft } from 'lucide-react';
+import { ProfessionalHero } from '@/components/design-system/ProfessionalHero';
+import { ContentSection, FeatureCard } from '@/components/design-system/ContentSection';
+import { Users, FileText, GitBranch, Award, ArrowRight } from 'lucide-react';
 import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hiring & Operational Maturity Roadmap | Build Scalable Business Operations',
-  description: 'Transform operations for business exit. Free gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies. Build operational maturity that increases business value and attracts buyers.',
+  title: 'Hiring & Operational Maturity Roadmap | Scale Your Business for Exit',
+  description: 'Build operational excellence before your exit. Gap-analysis worksheets, SOP template library, RACI charts, talent retention checklists, and compliance frameworks.',
   keywords: [
     'operational maturity',
-    'business process maturity',
+    'hiring roadmap business exit',
     'SOP templates',
-    'RACI matrix',
-    'gap analysis worksheet',
-    'talent retention strategies',
-    'operational excellence',
-    'scalable operations',
-    'org chart template',
-    'business process improvement'
+    'RACI chart templates',
+    'talent retention',
+    'business process documentation',
+    'operational excellence M&A',
+    'scale business for exit'
   ],
   openGraph: {
-    title: 'Hiring & Operational Maturity Roadmap for Business Exit',
-    description: 'Build scalable operations with free templates, RACI charts, and process maturity tools.',
+    title: 'Hiring & Operational Maturity Roadmap',
+    description: 'Build operational maturity and attract top talent to maximize exit value.',
     url: 'https://learn.livmo.com/hiring-operations',
   },
   alternates: {
@@ -39,10 +37,33 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
 const learningResourceSchema = generateLearningResourceSchema({
   name: 'Hiring & Operational Maturity Roadmap',
-  description: 'Comprehensive operational maturity toolkit with gap-analysis, SOP templates, RACI charts, and talent retention strategies for building sellable businesses',
+  description: 'Comprehensive guide to building operational maturity including gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies',
   url: 'https://learn.livmo.com/hiring-operations',
-  keywords: ['operational maturity', 'SOP templates', 'RACI charts', 'gap analysis', 'talent retention']
+  keywords: ['operational maturity', 'hiring roadmap', 'SOP templates', 'RACI charts', 'talent retention']
 });
+
+const features = [
+  {
+    icon: FileText,
+    title: 'Gap-Analysis Worksheets',
+    description: 'Identify operational weaknesses across processes, documentation, and team capabilities with structured assessment frameworks.',
+  },
+  {
+    icon: GitBranch,
+    title: 'SOP Template Library',
+    description: 'Ready-to-customize Standard Operating Procedure templates for sales, operations, finance, customer success, and more.',
+  },
+  {
+    icon: Users,
+    title: 'RACI Charts',
+    description: 'Responsibility Assignment Matrix templates to clarify roles, accountability, and decision rights across your organization.',
+  },
+  {
+    icon: Award,
+    title: 'Talent Retention & Compliance',
+    description: 'Checklists for key person risk mitigation, employment agreements, non-compete clauses, and compliance documentation.',
+  },
+];
 
 export default function HiringOperationsPage() {
   return (
@@ -50,81 +71,64 @@ export default function HiringOperationsPage() {
       <StructuredData data={breadcrumbSchema} />
       <StructuredData data={learningResourceSchema} />
       <Layout>
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-primary to-livmo-border text-white">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <Link
-              href="/"
-              className="inline-flex items-center text-blue-100 hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-            
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mr-6">
-                <Users className="h-8 w-8" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-bold font-headline">
-                Hiring & Operational Maturity Roadmap
-              </h1>
-            </div>
-            
-            <p className="text-xl text-blue-100">
-              Build operational excellence with gap-analysis tools, SOP templates, and talent retention strategies.
-            </p>
+        <ProfessionalHero
+          badge={{ icon: '●', text: 'Operational Excellence' }}
+          title="Hiring & Operational Maturity Roadmap"
+          subtitle="Scale Your Business for Exit"
+          description="Build operational maturity that attracts buyers and commands premium valuations. Get gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies."
+          icon={Users}
+          backLink={{ href: '/', text: 'Back to Home' }}
+          gradient="navy"
+        />
+
+        <ContentSection
+          title="What's Included"
+          description="Frameworks and templates to build operational maturity and reduce buyer risk."
+          background="white"
+        >
+          <div className="grid md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <FeatureCard
+                key={feature.title}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
           </div>
-        </Container>
-      </section>
+        </ContentSection>
 
-      <section className="py-16 lg:py-24 bg-livmo-light-neutral">
-        <Container size="md">
-          <Card variant="hero" className="text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-50 mb-4">
-                <Users className="h-10 w-10 text-livmo-primary" />
-              </div>
-              <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
-                Coming Soon
-              </h2>
-              <p className="text-lg text-livmo-body mb-6">
-                We're developing a complete operational maturity toolkit featuring:
-              </p>
+        <ContentSection background="gray">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-md bg-livmo-navy text-white mb-6">
+              <Users className="h-10 w-10" />
             </div>
-
-            <div className="grid md:grid-cols-2 gap-4 text-left mb-8">
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-livmo-navy mb-2">📊 Assessment Tools</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• Gap-Analysis Worksheets</li>
-                  <li>• Process Maturity Scorecard</li>
-                  <li>• Org Chart Templates</li>
-                  <li>• RACI Matrix Builder</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <h3 className="font-semibold text-livmo-navy mb-2">📚 Resources</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• SOP Template Library</li>
-                  <li>• Talent Retention Playbook</li>
-                  <li>• Compliance Checklists</li>
-                  <li>• Hiring Best Practices Guide</li>
-                </ul>
-              </div>
+            <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
+              Coming Soon
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              We're building a comprehensive operational maturity toolkit with gap-analysis worksheets, SOP templates, RACI charts, and retention strategies. Check back soon or book a consultation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gray-200 text-livmo-navy font-semibold rounded-md hover:bg-gray-300 transition-colors duration-150"
+              >
+                Return to Learning Hub
+              </Link>
+              <Link
+                href="https://go.livmo.com/meetings/go-livmo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-colors duration-150"
+              >
+                Book Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
-
-            <Link
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-livmo-primary text-white font-semibold rounded-lg hover:bg-livmo-navy transition-colors"
-            >
-              Return to Learning Hub
-            </Link>
-          </Card>
-        </Container>
-      </section>
-    </Layout>
+          </div>
+        </ContentSection>
+      </Layout>
     </>
   );
 }
-

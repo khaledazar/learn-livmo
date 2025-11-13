@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
+import { ProfessionalHero } from '@/components/design-system/ProfessionalHero';
 import { Card } from '@/components/design-system/Card';
 import { InteractiveDealTimeline } from '@/components/design-system/InteractiveDealTimeline';
 import { TrendingUp, ArrowLeft } from 'lucide-react';
@@ -51,33 +52,15 @@ export default function MAProcessPage() {
       <StructuredData data={breadcrumbSchema} />
       <StructuredData data={learningResourceSchema} />
       <Layout>
-        {/* Hero Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white">
-          <Container>
-            <div className="max-w-4xl mx-auto">
-              <Link
-                href="/"
-                className="inline-flex items-center text-blue-100 hover:text-white transition-colors mb-8"
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Link>
-              
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mr-6">
-                  <TrendingUp className="h-8 w-8" />
-                </div>
-                <h1 className="text-4xl lg:text-5xl font-bold font-headline">
-                  M&A Process Roadmap
-                </h1>
-              </div>
-              
-              <p className="text-xl text-blue-100">
-                Navigate every stage from teaser to close with confidence. Learn deal-killer traps and momentum-building strategies.
-              </p>
-            </div>
-          </Container>
-        </section>
+        <ProfessionalHero
+          badge={{ icon: '●', text: 'M&A Process Guide' }}
+          title="M&A Process Roadmap"
+          subtitle="From Teaser to Close"
+          description="Navigate every stage of the M&A process with confidence. Learn deal-killer traps, timeline expectations, and momentum-building strategies through our interactive 5-phase roadmap."
+          icon={TrendingUp}
+          backLink={{ href: '/', text: 'Back to Home' }}
+          gradient="navy"
+        />
 
         {/* Introduction */}
         <section className="py-12 bg-white">

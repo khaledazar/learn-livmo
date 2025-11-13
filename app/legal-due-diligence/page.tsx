@@ -1,30 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
-import { Container } from '@/components/layout/Container';
-import { Card } from '@/components/design-system/Card';
-import { Scale, ArrowLeft } from 'lucide-react';
+import { ProfessionalHero } from '@/components/design-system/ProfessionalHero';
+import { ContentSection, FeatureCard } from '@/components/design-system/ContentSection';
+import { Scale, FileText, Shield, Clipboard, ArrowRight } from 'lucide-react';
 import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Legal Due Diligence Audit Kit | M&A Document Preparation Checklist',
-  description: 'Complete legal due diligence toolkit for business exit. Free checklists for corporate documents, IP filings, NDAs, vendor agreements, and gap clean-up workflows. Prepare for M&A due diligence with confidence.',
+  description: 'Complete legal due diligence toolkit for business exits. Checklists for corporate docs, IP filings, key contracts, NDAs, vendor agreements, and clean-up workflows to prepare for M&A.',
   keywords: [
     'legal due diligence checklist',
     'M&A legal preparation',
     'corporate documents audit',
-    'IP filings inventory',
-    'contract review checklist',
-    'NDA template',
-    'vendor agreement review',
-    'legal compliance M&A',
-    'due diligence preparation',
-    'business sale legal docs'
+    'IP filings checklist',
+    'contract review M&A',
+    'business sale legal prep',
+    'due diligence audit kit',
+    'legal readiness exit'
   ],
   openGraph: {
-    title: 'Legal Due Diligence Audit Kit for M&A',
-    description: 'Complete legal preparation toolkit with checklists and trackers for successful M&A due diligence.',
+    title: 'Legal Due Diligence Audit Kit - M&A Document Prep',
+    description: 'Complete toolkit with checklists and trackers for legal due diligence readiness.',
     url: 'https://learn.livmo.com/legal-due-diligence',
   },
   alternates: {
@@ -34,15 +32,38 @@ export const metadata: Metadata = {
 
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', url: 'https://learn.livmo.com' },
-  { name: 'Legal Due-Diligence Audit Kit', url: 'https://learn.livmo.com/legal-due-diligence' }
+  { name: 'Legal Due Diligence Audit Kit', url: 'https://learn.livmo.com/legal-due-diligence' }
 ]);
 
 const learningResourceSchema = generateLearningResourceSchema({
-  name: 'Legal Due-Diligence Audit Kit',
-  description: 'Comprehensive legal audit toolkit including checklists for corporate documents, IP filings, contracts, and gap clean-up workflows for M&A preparation',
+  name: 'Legal Due Diligence Audit Kit',
+  description: 'Comprehensive legal due diligence toolkit including checklists for corporate documents, IP filings, contracts, and common gap clean-up workflows',
   url: 'https://learn.livmo.com/legal-due-diligence',
-  keywords: ['legal due diligence', 'M&A preparation', 'corporate documents', 'contract review', 'compliance audit']
+  keywords: ['legal due diligence', 'M&A preparation', 'corporate documents', 'IP audit', 'contract review']
 });
+
+const features = [
+  {
+    icon: FileText,
+    title: 'Corporate Documents Checklist',
+    description: 'Certificate of Incorporation, Bylaws, Board Minutes, Shareholder Agreements, and Cap Table documentation.',
+  },
+  {
+    icon: Shield,
+    title: 'IP Filings Tracker',
+    description: 'Patents, Trademarks, Copyrights, Domain Names, and Trade Secrets documentation and assignment verification.',
+  },
+  {
+    icon: Clipboard,
+    title: 'Key Contracts Review',
+    description: 'Customer Agreements, Vendor Contracts, NDAs, Employment Agreements, and Assignment Clause verification.',
+  },
+  {
+    icon: Scale,
+    title: 'Clean-Up Workflows',
+    description: 'Step-by-step processes to identify and resolve common legal gaps before buyer due diligence begins.',
+  },
+];
 
 export default function LegalDueDiligencePage() {
   return (
@@ -50,81 +71,64 @@ export default function LegalDueDiligencePage() {
       <StructuredData data={breadcrumbSchema} />
       <StructuredData data={learningResourceSchema} />
       <Layout>
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <Link
-              href="/"
-              className="inline-flex items-center text-blue-100 hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-            
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mr-6">
-                <Scale className="h-8 w-8" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-bold font-headline">
-                Legal Due-Diligence Audit Kit
-              </h1>
-            </div>
-            
-            <p className="text-xl text-blue-100">
-              Comprehensive checklists and trackers for corporate documents, IP filings, key contracts, and clean-up workflows.
-            </p>
+        <ProfessionalHero
+          badge={{ icon: '●', text: 'Legal Readiness' }}
+          title="Legal Due Diligence Audit Kit"
+          subtitle="Be Prepared for Buyer Scrutiny"
+          description="Comprehensive checklists and trackers for corporate docs, IP filings, key contracts, and common gap clean-up workflows. Get ahead of legal due diligence before buyers arrive."
+          icon={Scale}
+          backLink={{ href: '/', text: 'Back to Home' }}
+          gradient="navy"
+        />
+
+        <ContentSection
+          title="What's Included"
+          description="Everything you need to prepare for legal due diligence and avoid deal-killing surprises."
+          background="white"
+        >
+          <div className="grid md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <FeatureCard
+                key={feature.title}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
           </div>
-        </Container>
-      </section>
+        </ContentSection>
 
-      <section className="py-16 lg:py-24 bg-livmo-light-neutral">
-        <Container size="md">
-          <Card variant="hero" className="text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-livmo-navy/10 mb-4">
-                <Scale className="h-10 w-10 text-livmo-navy" />
-              </div>
-              <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
-                Coming Soon
-              </h2>
-              <p className="text-lg text-livmo-body mb-6">
-                We're preparing a complete legal due diligence toolkit including:
-              </p>
+        <ContentSection background="gray">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-md bg-livmo-navy text-white mb-6">
+              <Scale className="h-10 w-10" />
             </div>
-
-            <div className="grid md:grid-cols-2 gap-4 text-left mb-8">
-              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="font-semibold text-livmo-navy mb-2">📋 Checklists</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• Corporate Documents Tracker</li>
-                  <li>• IP Filings Inventory</li>
-                  <li>• Contract Review Checklist</li>
-                  <li>• Compliance Documentation</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="font-semibold text-livmo-navy mb-2">🔧 Workflows</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• Gap Clean-Up Process</li>
-                  <li>• Assignment Clause Review</li>
-                  <li>• NDA & Vendor Agreement Templates</li>
-                  <li>• Legal Q&A Preparation</li>
-                </ul>
-              </div>
+            <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
+              Coming Soon
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              We're currently building a comprehensive legal due diligence toolkit with downloadable checklists, trackers, and workflows. Check back soon or book a consultation to discuss your legal readiness.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gray-200 text-livmo-navy font-semibold rounded-md hover:bg-gray-300 transition-colors duration-150"
+              >
+                Return to Learning Hub
+              </Link>
+              <Link
+                href="https://go.livmo.com/meetings/go-livmo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-colors duration-150"
+              >
+                Book Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
-
-            <Link
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-livmo-primary text-white font-semibold rounded-lg hover:bg-livmo-navy transition-colors"
-            >
-              Return to Learning Hub
-            </Link>
-          </Card>
-        </Container>
-      </section>
-    </Layout>
+          </div>
+        </ContentSection>
+      </Layout>
     </>
   );
 }
-

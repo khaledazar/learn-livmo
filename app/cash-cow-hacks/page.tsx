@@ -1,30 +1,28 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
-import { Container } from '@/components/layout/Container';
-import { Card } from '@/components/design-system/Card';
-import { Lightbulb, ArrowLeft } from 'lucide-react';
+import { ProfessionalHero } from '@/components/design-system/ProfessionalHero';
+import { ContentSection, FeatureCard } from '@/components/design-system/ContentSection';
+import { Lightbulb, DollarSign, FileText, TrendingUp, ArrowRight } from 'lucide-react';
 import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Transform Lifestyle Business to Sellable Asset | Cash Cow Exit Strategies',
-  description: 'Convert your cash cow into a sellable business. Separate personal expenses, reduce owner dependency, document processes, build management team, and create scalable systems. Proven strategies to maximize lifestyle business value.',
+  title: 'Turn Your Cash Cow Into a Sellable Asset | Lifestyle Business to Exit-Ready',
+  description: 'Transform your lifestyle business into an attractive acquisition target. Practical strategies to separate personal expenses, professionalize operations, and build transferable value.',
   keywords: [
+    'cash cow to sellable business',
     'lifestyle business exit',
-    'cash cow business sale',
-    'reduce owner dependency',
-    'business sellability',
-    'lifestyle to sellable business',
-    'owner-dependent business',
-    'scalable business systems',
-    'business value building',
-    'personal vs business expenses',
-    'sellable asset creation'
+    'prepare business for sale',
+    'separate personal business expenses',
+    'professionalize small business',
+    'build sellable business',
+    'owner-dependent business exit',
+    'transferable business value'
   ],
   openGraph: {
     title: 'Turn Your Cash Cow Into a Sellable Asset',
-    description: 'Transform your lifestyle business into an attractive acquisition target with proven strategies.',
+    description: 'Practical strategies to transform your lifestyle business into an exit-ready company.',
     url: 'https://learn.livmo.com/cash-cow-hacks',
   },
   alternates: {
@@ -39,10 +37,33 @@ const breadcrumbSchema = generateBreadcrumbSchema([
 
 const learningResourceSchema = generateLearningResourceSchema({
   name: 'Turn Your Cash Cow Into a Sellable Asset',
-  description: 'Practical strategies to transform lifestyle businesses into attractive acquisition targets by reducing owner dependency and implementing scalable systems',
+  description: 'Practical strategies to transform lifestyle businesses into attractive acquisition targets by separating personal expenses and professionalizing operations',
   url: 'https://learn.livmo.com/cash-cow-hacks',
-  keywords: ['lifestyle business', 'cash cow exit', 'business sellability', 'owner dependency', 'scalable systems']
+  keywords: ['lifestyle business', 'sellable business', 'business transformation', 'owner dependency', 'exit preparation']
 });
+
+const features = [
+  {
+    icon: DollarSign,
+    title: 'Separate Personal Expenses',
+    description: 'Identify and document personal expenses in P&L, create clean add-back schedules, and establish professional expense policies going forward.',
+  },
+  {
+    icon: FileText,
+    title: 'Clean Up Other Expenses',
+    description: 'Remove personal pay as contractor costs, eliminate commingled accounts, and create transparent expense categorization.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Reduce Owner Dependency',
+    description: 'Build management team, document processes, delegate key relationships, and create systems that run without you.',
+  },
+  {
+    icon: Lightbulb,
+    title: 'Quick-Win Improvements',
+    description: 'High-impact changes you can make in 30-90 days to dramatically improve sellability and valuation.',
+  },
+];
 
 export default function CashCowHacksPage() {
   return (
@@ -50,91 +71,64 @@ export default function CashCowHacksPage() {
       <StructuredData data={breadcrumbSchema} />
       <StructuredData data={learningResourceSchema} />
       <Layout>
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-green-600 to-livmo-primary text-white">
-        <Container>
-          <div className="max-w-4xl mx-auto">
-            <Link
-              href="/"
-              className="inline-flex items-center text-green-100 hover:text-white transition-colors mb-8"
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              Back to Home
-            </Link>
-            
-            <div className="flex items-center mb-6">
-              <div className="w-16 h-16 rounded-lg bg-white/10 flex items-center justify-center mr-6">
-                <Lightbulb className="h-8 w-8" />
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-bold font-headline">
-                Turn Your Cash Cow Into a Sellable Asset
-              </h1>
-            </div>
-            
-            <p className="text-xl text-green-100">
-              Transform your lifestyle business into an attractive acquisition target with proven strategies.
-            </p>
+        <ProfessionalHero
+          badge={{ icon: '●', text: 'Business Transformation' }}
+          title="Turn Your Cash Cow Into a Sellable Asset"
+          subtitle="From Lifestyle Business to Exit-Ready"
+          description="Practical strategies to transform your lifestyle business into an attractive acquisition target. Learn how to separate personal expenses, professionalize operations, and build transferable value."
+          icon={Lightbulb}
+          backLink={{ href: '/', text: 'Back to Home' }}
+          gradient="navy"
+        />
+
+        <ContentSection
+          title="What's Included"
+          description="Actionable strategies to make your business more attractive to buyers and increase valuation."
+          background="white"
+        >
+          <div className="grid md:grid-cols-2 gap-6">
+            {features.map((feature) => (
+              <FeatureCard
+                key={feature.title}
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
           </div>
-        </Container>
-      </section>
+        </ContentSection>
 
-      <section className="py-16 lg:py-24 bg-livmo-light-neutral">
-        <Container size="md">
-          <Card variant="hero" className="text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-50 mb-4">
-                <Lightbulb className="h-10 w-10 text-green-600" />
-              </div>
-              <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
-                Coming Soon
-              </h2>
-              <p className="text-lg text-livmo-body mb-6">
-                We're creating a practical guide to help you transition from lifestyle business to sellable asset:
-              </p>
+        <ContentSection background="gray">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-md bg-livmo-navy text-white mb-6">
+              <Lightbulb className="h-10 w-10" />
             </div>
-
-            <div className="grid md:grid-cols-2 gap-4 text-left mb-8">
-              <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="font-semibold text-livmo-navy mb-2">💡 Quick Wins</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• Separate Personal vs Business Expenses</li>
-                  <li>• Document Key Processes</li>
-                  <li>• Build Management Team</li>
-                  <li>• Clean Up Financial Statements</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="font-semibold text-livmo-navy mb-2">🎯 Long-Term Strategy</h3>
-                <ul className="text-sm text-livmo-body space-y-1">
-                  <li>• Reduce Owner Dependency</li>
-                  <li>• Implement Scalable Systems</li>
-                  <li>• Build Recurring Revenue</li>
-                  <li>• Create Growth Trajectory</li>
-                </ul>
-              </div>
+            <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
+              Coming Soon
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              We're building a comprehensive guide with checklists, case studies, and step-by-step workflows to transform lifestyle businesses into sellable assets. Check back soon or book a consultation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center px-6 py-3 bg-gray-200 text-livmo-navy font-semibold rounded-md hover:bg-gray-300 transition-colors duration-150"
+              >
+                Return to Learning Hub
+              </Link>
+              <Link
+                href="https://go.livmo.com/meetings/go-livmo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-colors duration-150"
+              >
+                Book Consultation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
-
-            <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500 mb-8 text-left">
-              <h3 className="font-semibold text-livmo-navy mb-2">⚠️ Common Pitfalls:</h3>
-              <ul className="text-sm text-livmo-body space-y-1">
-                <li>• Personal expenses mixed with business (Other Expenses)</li>
-                <li>• Owner compensation as contractor payments</li>
-                <li>• Undocumented processes and tribal knowledge</li>
-                <li>• Single-person dependencies</li>
-              </ul>
-            </div>
-
-            <Link
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-livmo-primary text-white font-semibold rounded-lg hover:bg-livmo-navy transition-colors"
-            >
-              Return to Learning Hub
-            </Link>
-          </Card>
-        </Container>
-      </section>
-    </Layout>
+          </div>
+        </ContentSection>
+      </Layout>
     </>
   );
 }
-
