@@ -30,7 +30,7 @@ export default function TermsOfServicePage() {
             Back to Home
           </Link>
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 lg:p-12">
+          <div className="bg-white rounded-md shadow-sm border border-gray-200 p-8 lg:p-12">
             <h1 className="text-4xl font-bold font-headline text-livmo-navy mb-4">
               Terms of Service
             </h1>
@@ -203,7 +203,7 @@ export default function TermsOfServicePage() {
                 <p className="text-livmo-body mb-4">
                   If you have questions about these Terms, please contact us:
                 </p>
-                <div className="bg-livmo-light-neutral p-6 rounded-lg">
+                <div className="bg-livmo-light-neutral p-6 rounded-md">
                   <p className="text-livmo-body mb-2">
                     <strong>Livmo</strong>
                   </p>
@@ -217,7 +217,7 @@ export default function TermsOfServicePage() {
               </section>
 
               <section>
-                <div className="bg-livmo-light-gold p-6 rounded-lg border-l-4 border-livmo-gold">
+                <div className="bg-livmo-light-gold p-6 rounded-md border-l-4 border-livmo-gold">
                   <p className="text-sm text-livmo-navy">
                     <strong>Note:</strong> By using Learn.Livmo.com, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy.
                   </p>

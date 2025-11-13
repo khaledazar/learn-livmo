@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
             Back to Home
           </Link>
 
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 lg:p-12">
+          <div className="bg-white rounded-md shadow-sm border border-gray-200 p-8 lg:p-12">
             <h1 className="text-4xl font-bold font-headline text-livmo-navy mb-4">
               Privacy Policy
             </h1>
