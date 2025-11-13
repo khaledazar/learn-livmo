@@ -1,18 +1,55 @@
 import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
-import { Container } from '@/components/layout/Container';
+import { Container} from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { Users, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Hiring & Operational Maturity Roadmap | Learn Livmo',
-  description: 'Gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies.',
+export const metadata: Metadata = {
+  title: 'Hiring & Operational Maturity Roadmap | Build Scalable Business Operations',
+  description: 'Transform operations for business exit. Free gap-analysis worksheets, SOP templates, RACI charts, and talent retention strategies. Build operational maturity that increases business value and attracts buyers.',
+  keywords: [
+    'operational maturity',
+    'business process maturity',
+    'SOP templates',
+    'RACI matrix',
+    'gap analysis worksheet',
+    'talent retention strategies',
+    'operational excellence',
+    'scalable operations',
+    'org chart template',
+    'business process improvement'
+  ],
+  openGraph: {
+    title: 'Hiring & Operational Maturity Roadmap for Business Exit',
+    description: 'Build scalable operations with free templates, RACI charts, and process maturity tools.',
+    url: 'https://learn.livmo.com/hiring-operations',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/hiring-operations',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'Hiring & Operational Maturity', url: 'https://learn.livmo.com/hiring-operations' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'Hiring & Operational Maturity Roadmap',
+  description: 'Comprehensive operational maturity toolkit with gap-analysis, SOP templates, RACI charts, and talent retention strategies for building sellable businesses',
+  url: 'https://learn.livmo.com/hiring-operations',
+  keywords: ['operational maturity', 'SOP templates', 'RACI charts', 'gap analysis', 'talent retention']
+});
 
 export default function HiringOperationsPage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-primary to-livmo-border text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -87,6 +124,7 @@ export default function HiringOperationsPage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 

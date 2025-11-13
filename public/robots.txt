@@ -1,0 +1,30 @@
+# robots.txt for learn.livmo.com
+
+User-agent: *
+Allow: /
+
+# AI Crawlers - Generative Engine Optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://learn.livmo.com/sitemap.xml
+

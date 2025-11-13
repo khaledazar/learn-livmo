@@ -3,10 +3,18 @@ import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Terms of Service | Learn Livmo',
-  description: 'Terms of Service for Learn.Livmo.com',
+export const metadata: Metadata = {
+  title: 'Terms of Service | Learn Livmo - Legal Terms & Conditions',
+  description: 'Learn Livmo terms of service. Usage guidelines, disclaimers, educational content policies, and legal terms for using our exit readiness academy.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/terms',
+  },
 };
 
 export default function TermsOfServicePage() {

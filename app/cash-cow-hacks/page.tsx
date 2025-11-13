@@ -4,15 +4,52 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { Lightbulb, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Turn Your Cash Cow Into a Sellable Asset | Learn Livmo',
-  description: 'Practical strategies to transform your lifestyle business into an attractive acquisition target.',
+export const metadata: Metadata = {
+  title: 'Transform Lifestyle Business to Sellable Asset | Cash Cow Exit Strategies',
+  description: 'Convert your cash cow into a sellable business. Separate personal expenses, reduce owner dependency, document processes, build management team, and create scalable systems. Proven strategies to maximize lifestyle business value.',
+  keywords: [
+    'lifestyle business exit',
+    'cash cow business sale',
+    'reduce owner dependency',
+    'business sellability',
+    'lifestyle to sellable business',
+    'owner-dependent business',
+    'scalable business systems',
+    'business value building',
+    'personal vs business expenses',
+    'sellable asset creation'
+  ],
+  openGraph: {
+    title: 'Turn Your Cash Cow Into a Sellable Asset',
+    description: 'Transform your lifestyle business into an attractive acquisition target with proven strategies.',
+    url: 'https://learn.livmo.com/cash-cow-hacks',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/cash-cow-hacks',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'Cash Cow to Sellable Asset', url: 'https://learn.livmo.com/cash-cow-hacks' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'Turn Your Cash Cow Into a Sellable Asset',
+  description: 'Practical strategies to transform lifestyle businesses into attractive acquisition targets by reducing owner dependency and implementing scalable systems',
+  url: 'https://learn.livmo.com/cash-cow-hacks',
+  keywords: ['lifestyle business', 'cash cow exit', 'business sellability', 'owner dependency', 'scalable systems']
+});
 
 export default function CashCowHacksPage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-green-600 to-livmo-primary text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -97,6 +134,7 @@ export default function CashCowHacksPage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 

@@ -4,15 +4,52 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { TrendingUp, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'M&A Process Roadmap | Learn Livmo',
-  description: 'Stage-by-stage guide from teaser to close, with common deal-killer traps and momentum tips.',
+export const metadata: Metadata = {
+  title: 'M&A Process Roadmap | Complete Guide from Teaser to Close',
+  description: 'Master the M&A process: teaser, NDA, LOI, due diligence, definitive agreement, and close. Learn deal-killer traps, timeline expectations, and momentum-building strategies. Interactive 5-phase roadmap for business exits.',
+  keywords: [
+    'M&A process steps',
+    'mergers and acquisitions process',
+    'LOI negotiation',
+    'due diligence process',
+    'definitive agreement',
+    'M&A timeline',
+    'deal killer mistakes',
+    'business sale process',
+    'M&A roadmap',
+    'acquisition process guide'
+  ],
+  openGraph: {
+    title: 'M&A Process Roadmap - Complete Guide to Business Exit',
+    description: 'Interactive guide through every M&A stage from teaser to close. Avoid common pitfalls and keep momentum.',
+    url: 'https://learn.livmo.com/ma-process',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/ma-process',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'M&A Process Roadmap', url: 'https://learn.livmo.com/ma-process' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'M&A Process Roadmap',
+  description: 'Interactive stage-by-stage M&A process guide covering teaser, LOI, due diligence, definitive agreement, and close with deal-killer traps and momentum strategies',
+  url: 'https://learn.livmo.com/ma-process',
+  keywords: ['M&A process', 'LOI negotiation', 'due diligence', 'business sale', 'acquisition roadmap']
+});
 
 export default function MAProcessPage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-gold/90 to-livmo-primary text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -94,6 +131,7 @@ export default function MAProcessPage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 

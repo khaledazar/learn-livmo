@@ -4,15 +4,52 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { FileText, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Financial Reporting Best Practices | Learn Livmo',
-  description: 'Boost your valuation with accurate financial statements. Templates, checklists, and workflows included.',
+export const metadata: Metadata = {
+  title: 'Financial Reporting Best Practices for Business Exit | Boost Valuation',
+  description: 'Master financial reporting to maximize your business valuation. Free templates: Chart of Accounts, Revenue Recognition Policy, SaaS Metrics, Variance Analysis. Clean financial statements for successful M&A due diligence.',
+  keywords: [
+    'financial reporting best practices',
+    'business valuation financial statements',
+    'P&L optimization',
+    'revenue recognition',
+    'GAAP compliance',
+    'SaaS metrics reporting',
+    'financial due diligence',
+    'chart of accounts template',
+    'clean financial data',
+    'M&A financial preparation'
+  ],
+  openGraph: {
+    title: 'Financial Reporting Best Practices for M&A Success',
+    description: 'Boost your company valuation with accurate financial statements. Free templates and checklists included.',
+    url: 'https://learn.livmo.com/financial-reporting',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/financial-reporting',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'Financial Reporting Best Practices', url: 'https://learn.livmo.com/financial-reporting' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'Financial Reporting Best Practices for Business Exit',
+  description: 'Comprehensive guide to financial reporting that maximizes business valuation with templates for Chart of Accounts, Revenue Recognition Policy, and SaaS Metrics',
+  url: 'https://learn.livmo.com/financial-reporting',
+  keywords: ['financial reporting', 'business valuation', 'M&A preparation', 'GAAP compliance', 'SaaS metrics']
+});
 
 export default function FinancialReportingPage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-primary to-livmo-navy text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -87,6 +124,7 @@ export default function FinancialReportingPage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 

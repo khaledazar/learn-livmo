@@ -3,10 +3,18 @@ import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { ArrowLeft } from 'lucide-react';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Privacy Policy | Learn Livmo',
-  description: 'Privacy Policy for Learn.Livmo.com',
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Learn Livmo - Data Protection & Privacy',
+  description: 'Learn Livmo privacy policy. How we collect, use, and protect your personal information. GDPR and CCPA compliant. Local storage for progress tracking.',
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/privacy',
+  },
 };
 
 export default function PrivacyPolicyPage() {

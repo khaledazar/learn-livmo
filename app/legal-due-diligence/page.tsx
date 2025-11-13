@@ -4,15 +4,52 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { Scale, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Legal Due-Diligence Audit Kit | Learn Livmo',
-  description: 'Checklists and trackers for corporate docs, IP filings, contracts, and common gap clean-up workflows.',
+export const metadata: Metadata = {
+  title: 'Legal Due Diligence Audit Kit | M&A Document Preparation Checklist',
+  description: 'Complete legal due diligence toolkit for business exit. Free checklists for corporate documents, IP filings, NDAs, vendor agreements, and gap clean-up workflows. Prepare for M&A due diligence with confidence.',
+  keywords: [
+    'legal due diligence checklist',
+    'M&A legal preparation',
+    'corporate documents audit',
+    'IP filings inventory',
+    'contract review checklist',
+    'NDA template',
+    'vendor agreement review',
+    'legal compliance M&A',
+    'due diligence preparation',
+    'business sale legal docs'
+  ],
+  openGraph: {
+    title: 'Legal Due Diligence Audit Kit for M&A',
+    description: 'Complete legal preparation toolkit with checklists and trackers for successful M&A due diligence.',
+    url: 'https://learn.livmo.com/legal-due-diligence',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/legal-due-diligence',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'Legal Due-Diligence Audit Kit', url: 'https://learn.livmo.com/legal-due-diligence' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'Legal Due-Diligence Audit Kit',
+  description: 'Comprehensive legal audit toolkit including checklists for corporate documents, IP filings, contracts, and gap clean-up workflows for M&A preparation',
+  url: 'https://learn.livmo.com/legal-due-diligence',
+  keywords: ['legal due diligence', 'M&A preparation', 'corporate documents', 'contract review', 'compliance audit']
+});
 
 export default function LegalDueDiligencePage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -87,6 +124,7 @@ export default function LegalDueDiligencePage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 

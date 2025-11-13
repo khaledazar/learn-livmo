@@ -4,15 +4,52 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { Card } from '@/components/design-system/Card';
 import { Target, ArrowLeft } from 'lucide-react';
+import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Buyer-Profile & Pros-Cons Guide | Learn Livmo',
-  description: 'Understand strategic buyers, PE firms, and corporate acquirers—what they value and typical pitfalls.',
+export const metadata: Metadata = {
+  title: 'Buyer Profile Guide | Strategic vs PE vs Corporate Acquirers Comparison',
+  description: 'Master M&A buyer types: Strategic buyers, PE firms, and corporate acquirers. Compare deal timelines, valuation methods, term sheets, and common pitfalls. Choose the right buyer for your business exit.',
+  keywords: [
+    'types of business buyers',
+    'strategic buyers vs PE firms',
+    'corporate acquirers',
+    'private equity acquisition',
+    'strategic acquisition',
+    'M&A buyer types',
+    'term sheet comparison',
+    'buyer due diligence',
+    'business acquisition types',
+    'exit buyer selection'
+  ],
+  openGraph: {
+    title: 'Buyer Profile & Comparison Guide for M&A Success',
+    description: 'Understand strategic buyers, PE firms, and corporate acquirers. Compare deal structures and choose the right buyer.',
+    url: 'https://learn.livmo.com/buyer-profile',
+  },
+  alternates: {
+    canonical: 'https://learn.livmo.com/buyer-profile',
+  },
 };
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+  { name: 'Home', url: 'https://learn.livmo.com' },
+  { name: 'Buyer-Profile & Pros-Cons Guide', url: 'https://learn.livmo.com/buyer-profile' }
+]);
+
+const learningResourceSchema = generateLearningResourceSchema({
+  name: 'Buyer-Profile & Pros-Cons Guide',
+  description: 'Comprehensive comparison of M&A buyer types including strategic buyers, PE firms, and corporate acquirers with deal timeline and term sheet analysis',
+  url: 'https://learn.livmo.com/buyer-profile',
+  keywords: ['buyer types', 'strategic buyers', 'PE firms', 'corporate acquirers', 'M&A deal structures']
+});
 
 export default function BuyerProfilePage() {
   return (
-    <Layout>
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <StructuredData data={learningResourceSchema} />
+      <Layout>
       <section className="py-16 lg:py-24 bg-gradient-to-br from-livmo-border to-livmo-primary text-white">
         <Container>
           <div className="max-w-4xl mx-auto">
@@ -98,6 +135,7 @@ export default function BuyerProfilePage() {
         </Container>
       </section>
     </Layout>
+    </>
   );
 }
 
