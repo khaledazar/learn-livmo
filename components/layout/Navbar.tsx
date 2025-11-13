@@ -65,7 +65,7 @@ export const Navbar: React.FC = () => {
             
             {/* CTA Button */}
             <Link
-              href="https://calendly.com/yourlink"
+              href="https://go.livmo.com/meetings/go-livmo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-6 py-2.5 bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
@@ -112,7 +112,7 @@ export const Navbar: React.FC = () => {
                 </Link>
               ))}
               <Link
-                href="https://calendly.com/yourlink"
+                href="https://go.livmo.com/meetings/go-livmo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full mt-4 px-3 py-3 text-center bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-colors duration-200"

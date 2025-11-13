@@ -20,7 +20,7 @@ const resourceLinks = [
 const companyLinks = [
   { name: 'About Livmo', href: 'https://livmo.com', external: true },
   { name: 'Contact Us', href: 'https://livmo.com/contact', external: true },
-  { name: 'Book Consultation', href: 'https://calendly.com/yourlink', external: true },
+  { name: 'Book Consultation', href: 'https://go.livmo.com/meetings/go-livmo', external: true },
 ];
 
 export const Footer: React.FC = () => {

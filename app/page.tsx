@@ -268,7 +268,7 @@ export default function Home() {
               Schedule a consultation with our exit planning experts to discuss your specific situation.
             </p>
             <Link
-              href="https://calendly.com/yourlink"
+              href="https://go.livmo.com/meetings/go-livmo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-8 py-4 bg-livmo-navy text-white font-semibold rounded-lg hover:bg-livmo-navy/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-lg"
