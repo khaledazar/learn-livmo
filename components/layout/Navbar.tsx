@@ -180,51 +180,57 @@ export const Navbar: React.FC = () => {
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative w-40 h-10">
-              <Image
-                src="/universal-assets/images/livmo-logo-light-bg.png"
-                alt="Livmo - Learn"
-                fill
-                className="object-contain transition-transform duration-300 group-hover:scale-105"
-                priority
-              />
-            </div>
-          </Link>
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative w-40 h-10">
+                <Image
+                  src="/universal-assets/images/livmo-logo-light-bg.png"
+                  alt="Livmo - Learn"
+                  fill
+                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-6">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-center lg:items-center lg:space-x-6">
             {menuSections.map((section) => (
               <DesktopDropdown key={section.name} section={section} />
             ))}
-            
-            {/* CTA Button */}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex lg:flex-shrink-0">
             <Link
               href="https://go.livmo.com/meetings/go-livmo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-2.5 bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 ml-2"
+              className="inline-flex items-center px-6 py-2.5 bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               Book Consultation
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <button
-            type="button"
-            className="lg:hidden inline-flex items-center justify-center p-2 rounded-md text-livmo-body hover:text-livmo-primary hover:bg-gray-100 transition-colors duration-200"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          <div className="flex-1 flex justify-end lg:hidden">
+            <button
+              type="button"
+              className="inline-flex items-center justify-center p-2 rounded-md text-livmo-body hover:text-livmo-primary hover:bg-gray-100 transition-colors duration-200"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
