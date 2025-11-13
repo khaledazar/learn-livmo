@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AccentDivider } from './';
+import { AccentDivider } from './AccentDivider';
 
 interface Milestone {
   title: string;
