@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm inline-flex items-center gap-1"
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-150 text-sm inline-flex items-center gap-1"
                     {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.name}
@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-150 text-sm"
                   >
                     {link.name}
                   </Link>
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm inline-flex items-center gap-1"
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-150 text-sm inline-flex items-center gap-1"
                     {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.name}
@@ -110,7 +110,7 @@ export const Footer: React.FC = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm inline-flex items-center gap-1"
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-150 text-sm inline-flex items-center gap-1"
                     {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.name}
@@ -131,13 +131,13 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-6">
               <Link
                 href="/privacy"
-                className="text-gray-400 hover:text-livmo-gold transition-colors duration-200 text-sm"
+                className="text-gray-400 hover:text-livmo-gold transition-colors duration-150 text-sm"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms"
-                className="text-gray-400 hover:text-livmo-gold transition-colors duration-200 text-sm"
+                className="text-gray-400 hover:text-livmo-gold transition-colors duration-150 text-sm"
               >
                 Terms of Service
               </Link>

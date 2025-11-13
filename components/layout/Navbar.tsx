@@ -70,11 +70,11 @@ const DesktopDropdown: React.FC<{ section: NavSection }> = ({ section }) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15 }}
+            className="absolute left-0 mt-2 w-72 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50"
           >
             {section.items.map((item) => {
               const Icon = item.icon;
@@ -83,7 +83,7 @@ const DesktopDropdown: React.FC<{ section: NavSection }> = ({ section }) => {
                   key={item.name}
                   href={item.href}
                   {...(item.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  className="flex items-center px-4 py-3 text-sm text-livmo-body hover:bg-gray-50 hover:text-livmo-primary transition-colors duration-150"
+                  className="flex items-center px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-livmo-navy transition-colors duration-150 font-medium"
                 >
                   {Icon && <Icon className="h-4 w-4 mr-3 flex-shrink-0" />}
                   <span className="flex-1">{item.name}</span>
@@ -173,10 +173,10 @@ export const Navbar: React.FC = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-200',
         scrolled
-          ? 'bg-white shadow-md'
-          : 'bg-white/95 backdrop-blur-sm'
+          ? 'bg-white shadow-sm border-b border-gray-200'
+          : 'bg-white border-b border-gray-100'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,7 +209,7 @@ export const Navbar: React.FC = () => {
               href="https://go.livmo.com/meetings/go-livmo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-2.5 bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+              className="inline-flex items-center px-6 py-2.5 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-all duration-150"
             >
               Book Consultation
             </Link>
@@ -241,7 +241,7 @@ export const Navbar: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             className="lg:hidden bg-white border-t border-gray-200"
           >
             <div className="px-4 pt-2 pb-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
@@ -268,7 +268,7 @@ export const Navbar: React.FC = () => {
                 href="https://go.livmo.com/meetings/go-livmo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full mt-4 px-3 py-3 text-center bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-colors duration-200"
+                className="block w-full mt-4 px-3 py-3 text-center bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-colors duration-150"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Book Consultation
