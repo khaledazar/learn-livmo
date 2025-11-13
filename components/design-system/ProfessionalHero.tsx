@@ -58,13 +58,17 @@ export const ProfessionalHero: React.FC<ProfessionalHeroProps> = ({
       <Container className="relative z-10">
         <div className="max-w-4xl">
           {backLink && (
-            <Link
-              href={backLink.href}
-              className={`inline-flex items-center ${subtitleColor} hover:${textColor} transition-colors mb-6 text-sm font-medium`}
-            >
-              <ArrowLeft className="mr-2 h-4 w-4" />
-              {backLink.text}
-            </Link>
+            <div className="mb-8">
+              <Link
+                href={backLink.href}
+                className={`inline-flex items-center gap-2 ${isLightGradient ? 'text-gray-600 hover:text-livmo-navy' : 'text-gray-400 hover:text-white'} transition-colors text-sm font-medium group`}
+              >
+                <div className={`w-6 h-6 rounded flex items-center justify-center ${isLightGradient ? 'bg-gray-200 group-hover:bg-gray-300' : 'bg-white/10 group-hover:bg-white/20'} transition-colors`}>
+                  <ArrowLeft className="h-3.5 w-3.5" />
+                </div>
+                <span>{backLink.text}</span>
+              </Link>
+            </div>
           )}
 
           {badge && (

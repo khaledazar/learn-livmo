@@ -81,6 +81,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  icons: {
+    icon: [
+      { url: '/universal-assets/accents/19.png', sizes: '32x32', type: 'image/png' },
+      { url: '/universal-assets/accents/19.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/universal-assets/accents/19.png',
+    shortcut: '/universal-assets/accents/19.png',
+  },
   verification: {
     google: 'your-google-verification-code', // User should add their actual code
   },

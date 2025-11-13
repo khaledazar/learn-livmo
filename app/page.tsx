@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
@@ -15,7 +15,6 @@ import {
   TrendingUp,
   Lightbulb,
   ArrowRight,
-  CheckCircle2,
   ExternalLink
 } from 'lucide-react';
 
@@ -27,7 +26,6 @@ interface Resource {
   href: string;
   isExternal?: boolean;
   category: 'Tools' | 'Guides' | 'Resources';
-  completed?: boolean;
 }
 
 const resources: Resource[] = [
@@ -41,22 +39,12 @@ const resources: Resource[] = [
     category: 'Tools',
   },
   {
-    id: 'saas-metrics',
-    title: 'SaaS Metrics Guide',
-    description: 'Master the fundamentals, metrics, and drivers that impact your SaaS exit valuation.',
-    icon: LineChart,
-    href: 'https://go.livmo.com/hubfs/The_SaaS_Exit_Valuation_Guide-Fundamentals_Metrics_and_Drivers.pdf',
-    isExternal: true,
-    category: 'Resources',
-  },
-  {
     id: 'sellability-checklist',
     title: 'Sellability Checklist',
-    description: 'Comprehensive checklist to assess your business readiness for a successful exit.',
+    description: 'Comprehensive assessment tool to evaluate your business readiness for a successful exit across all critical areas.',
     icon: ClipboardCheck,
-    href: 'https://go.livmo.com/hubfs/Livmo%20-%20Business%20Owner%20Sellability%20Checklist%20-%20Regular%20Business.pdf',
-    isExternal: true,
-    category: 'Resources',
+    href: '/sellability-checklist',
+    category: 'Tools',
   },
   {
     id: 'financial-reporting',
@@ -106,33 +94,24 @@ const resources: Resource[] = [
     href: '/cash-cow-hacks',
     category: 'Guides',
   },
+  {
+    id: 'saas-metrics',
+    title: 'SaaS Metrics Guide',
+    description: 'Master the fundamentals, metrics, and drivers that impact your SaaS exit valuation.',
+    icon: LineChart,
+    href: 'https://go.livmo.com/hubfs/The_SaaS_Exit_Valuation_Guide-Fundamentals_Metrics_and_Drivers.pdf',
+    isExternal: true,
+    category: 'Resources',
+  },
 ];
 
+const categoryColors = {
+  Tools: 'bg-blue-100 text-blue-700 border-blue-200',
+  Guides: 'bg-purple-100 text-purple-700 border-purple-200',
+  Resources: 'bg-green-100 text-green-700 border-green-200',
+};
+
 export default function Home() {
-  const [completedResources, setCompletedResources] = useState<Set<string>>(new Set());
-
-  // Load completed resources from localStorage
-  useEffect(() => {
-    const stored = localStorage.getItem('completedResources');
-    if (stored) {
-      setCompletedResources(new Set(JSON.parse(stored)));
-    }
-  }, []);
-
-  // Toggle resource completion
-  const toggleCompletion = (resourceId: string) => {
-    const updated = new Set(completedResources);
-    if (updated.has(resourceId)) {
-      updated.delete(resourceId);
-    } else {
-      updated.add(resourceId);
-    }
-    setCompletedResources(updated);
-    localStorage.setItem('completedResources', JSON.stringify([...updated]));
-  };
-
-  const completionPercentage = Math.round((completedResources.size / resources.length) * 100);
-
   return (
     <Layout>
       {/* Hero Section - Corporate Fintech Style */}
@@ -150,7 +129,7 @@ export default function Home() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center px-3 py-1 bg-white/10 border border-white/20 rounded-md text-sm font-medium mb-6">
               <span className="text-livmo-gold">●</span>
-              <span className="ml-2">Exit Readiness Platform</span>
+              <span className="ml-2">Exit Education Center</span>
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold font-headline mb-6 tracking-tight">
@@ -189,8 +168,8 @@ export default function Home() {
                 <div className="text-sm text-gray-400">Expert Resources</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-livmo-gold mb-1">{completionPercentage}%</div>
-                <div className="text-sm text-gray-400">Your Progress</div>
+                <div className="text-3xl font-bold text-livmo-gold mb-1">2</div>
+                <div className="text-sm text-gray-400">Interactive Tools</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-livmo-gold mb-1">100%</div>
@@ -200,38 +179,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* Progress Section - Data Viz Style */}
-      {completedResources.size > 0 && (
-        <section className="py-8 bg-gray-50 border-y border-gray-200">
-          <Container>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-md bg-green-100 flex items-center justify-center">
-                  <CheckCircle2 className="h-6 w-6 text-green-600" />
-                </div>
-                <div>
-                  <div className="text-sm font-medium text-gray-600">Learning Progress</div>
-                  <div className="text-lg font-semibold text-livmo-navy">
-                    {completedResources.size} of {resources.length} completed
-                  </div>
-                </div>
-              </div>
-              <div className="hidden md:flex items-center gap-3">
-                <div className="w-64 h-2 bg-gray-200 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-livmo-gold transition-all duration-500 ease-out"
-                    style={{ width: `${completionPercentage}%` }}
-                  />
-                </div>
-                <span className="text-sm font-semibold text-livmo-navy w-12 text-right">
-                  {completionPercentage}%
-                </span>
-              </div>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* Resources Grid */}
       <section id="resources" className="py-20 lg:py-28 bg-white">
@@ -248,31 +195,20 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {resources.map((resource) => {
               const Icon = resource.icon;
-              const isCompleted = completedResources.has(resource.id);
 
               return (
-                <div key={resource.id} className="group">
-                  <div className="relative h-full p-6 bg-white border border-gray-200 rounded-lg hover:border-livmo-primary hover:shadow-lg transition-all duration-200">
+                <Link
+                  key={resource.id}
+                  href={resource.href}
+                  {...(resource.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="group block h-full"
+                >
+                  <div className="h-full p-6 bg-white border border-gray-200 rounded-md hover:border-livmo-primary hover:shadow-lg transition-all duration-150">
                     {/* Category Badge */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded">
+                      <span className={`inline-flex items-center px-2 py-1 text-xs font-medium rounded border ${categoryColors[resource.category]}`}>
                         {resource.category}
                       </span>
-                      
-                      {/* Completion Checkbox */}
-                      <button
-                        onClick={() => toggleCompletion(resource.id)}
-                        className="transition-transform duration-150 hover:scale-110"
-                        aria-label={isCompleted ? 'Mark as incomplete' : 'Mark as complete'}
-                      >
-                        <CheckCircle2
-                          className={`h-5 w-5 transition-colors duration-200 ${
-                            isCompleted
-                              ? 'text-green-500 fill-green-500'
-                              : 'text-gray-300 hover:text-gray-400'
-                          }`}
-                        />
-                      </button>
                     </div>
 
                     {/* Icon */}
@@ -290,21 +226,17 @@ export default function Home() {
                       {resource.description}
                     </p>
 
-                    {/* Link */}
-                    <Link
-                      href={resource.href}
-                      {...(resource.isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="inline-flex items-center text-sm font-semibold text-livmo-primary hover:text-livmo-navy transition-colors duration-150"
-                    >
+                    {/* Link Indicator */}
+                    <div className="inline-flex items-center text-sm font-semibold text-livmo-primary group-hover:text-livmo-navy transition-colors duration-150">
                       {resource.isExternal ? 'Access Resource' : 'View Guide'}
                       {resource.isExternal ? (
                         <ExternalLink className="ml-1.5 h-4 w-4" />
                       ) : (
                         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                       )}
-                    </Link>
+                    </div>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
