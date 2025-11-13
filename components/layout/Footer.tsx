@@ -3,18 +3,24 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
 
-const mainLinks = [
-  { name: 'SaaS Valuation Calculator', href: '/saas-valuation' },
-  { name: 'SaaS Metrics Guide', href: '/saas-metrics' },
+const toolsLinks = [
+  { name: 'SaaS Valuation Calculator', href: 'https://saasvaluation.livmo.com/', external: true },
   { name: 'Sellability Checklist', href: '/sellability-checklist' },
-  { name: 'Financial Reporting', href: '/financial-reporting' },
 ];
 
-const resourceLinks = [
-  { name: 'Legal Due Diligence', href: '/legal-due-diligence' },
-  { name: 'Hiring & Operations', href: '/hiring-operations' },
-  { name: 'Buyer Profile Guide', href: '/buyer-profile' },
+const guidesLinks = [
+  { name: 'Financial Reporting Best Practices', href: '/financial-reporting' },
+  { name: 'Legal Due Diligence Audit Kit', href: '/legal-due-diligence' },
+  { name: 'Hiring & Operational Maturity', href: '/hiring-operations' },
+  { name: 'Buyer Profile & Comparison Guide', href: '/buyer-profile' },
   { name: 'M&A Process Roadmap', href: '/ma-process' },
+  { name: 'Cash Cow to Sellable Asset', href: '/cash-cow-hacks' },
+];
+
+const resourcesLinks = [
+  { name: 'SaaS Metrics Guide (PDF)', href: 'https://go.livmo.com/hubfs/The_SaaS_Exit_Valuation_Guide-Fundamentals_Metrics_and_Drivers.pdf', external: true },
+  { name: 'Sellability Checklist (PDF)', href: 'https://go.livmo.com/hubfs/Livmo%20-%20Business%20Owner%20Sellability%20Checklist%20-%20Regular%20Business.pdf', external: true },
+  { name: 'Financial Templates', href: 'https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z', external: true },
 ];
 
 const companyLinks = [
@@ -29,9 +35,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-livmo-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <div className="relative w-40 h-10 mb-6">
               <Image
                 src="/universal-assets/images/livmo-logo-dark-bg.png"
@@ -45,11 +51,30 @@ export const Footer: React.FC = () => {
             </p>
           </div>
 
-          {/* Main Resources */}
+          {/* Tools */}
           <div>
-            <h3 className="text-lg font-headline font-semibold mb-4">Main Resources</h3>
+            <h3 className="text-lg font-headline font-semibold mb-4">Tools</h3>
             <ul className="space-y-3">
-              {mainLinks.map((link) => (
+              {toolsLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm inline-flex items-center gap-1"
+                    {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {link.name}
+                    {link.external && <ExternalLink className="h-3 w-3" />}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h3 className="text-lg font-headline font-semibold mb-4">Guides</h3>
+            <ul className="space-y-3">
+              {guidesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
@@ -62,25 +87,23 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Additional Resources */}
+          {/* Resources & Company Combined */}
           <div>
-            <h3 className="text-lg font-headline font-semibold mb-4">Additional Resources</h3>
-            <ul className="space-y-3">
-              {resourceLinks.map((link) => (
+            <h3 className="text-lg font-headline font-semibold mb-4">Resources</h3>
+            <ul className="space-y-3 mb-6">
+              {resourcesLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm"
+                    className="text-gray-300 hover:text-livmo-gold transition-colors duration-200 text-sm inline-flex items-center gap-1"
+                    {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                   >
                     {link.name}
+                    {link.external && <ExternalLink className="h-3 w-3" />}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
-
-          {/* Company */}
-          <div>
             <h3 className="text-lg font-headline font-semibold mb-4">Company</h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
