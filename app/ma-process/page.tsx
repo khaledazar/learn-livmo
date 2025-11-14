@@ -4,8 +4,9 @@ import { Layout } from '@/components/layout/Layout';
 import { Container } from '@/components/layout/Container';
 import { ProfessionalHero } from '@/components/design-system/ProfessionalHero';
 import { Card } from '@/components/design-system/Card';
+import { TableOfContents } from '@/components/design-system/TableOfContents';
 import { InteractiveDealTimeline } from '@/components/design-system/InteractiveDealTimeline';
-import { TrendingUp, ArrowLeft } from 'lucide-react';
+import { TrendingUp } from 'lucide-react';
 import { StructuredData, generateLearningResourceSchema, generateBreadcrumbSchema } from '@/components/seo/StructuredData';
 import type { Metadata } from 'next';
 
@@ -46,6 +47,29 @@ const learningResourceSchema = generateLearningResourceSchema({
   keywords: ['M&A process', 'LOI negotiation', 'due diligence', 'business sale', 'acquisition roadmap']
 });
 
+const tocItems = [
+  {
+    id: 'introduction',
+    title: 'Understanding the M&A Journey',
+  },
+  {
+    id: 'interactive-timeline',
+    title: 'Interactive Timeline',
+  },
+  {
+    id: 'deal-killer-traps',
+    title: 'Common Deal-Killer Traps',
+  },
+  {
+    id: 'timeline-expectations',
+    title: 'Realistic Timeline Expectations',
+  },
+  {
+    id: 'momentum-tips',
+    title: 'How to Keep Momentum',
+  },
+];
+
 export default function MAProcessPage() {
   return (
     <>
@@ -62,32 +86,50 @@ export default function MAProcessPage() {
           gradient="navy"
         />
 
-        {/* Introduction */}
-        <section className="py-12 bg-white">
-          <Container size="md">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-4">
-                Understanding the M&A Journey
-              </h2>
-              <p className="text-livmo-body text-lg mb-6">
-                The M&A process typically takes 6-12 months from first contact to closing. Understanding each phase helps you stay organized, avoid common pitfalls, and maintain momentum when things slow down (and they will).
-              </p>
-              <p className="text-livmo-body text-lg">
-                Below is an interactive timeline showing all 5 phases and 14 key milestones. Click on any milestone to see detailed information, typical timelines, and what to watch out for.
-              </p>
+        {/* Main Content with Sidebar TOC */}
+        <section className="py-16 lg:py-20 bg-white">
+          <Container>
+            <div className="lg:flex gap-12">
+              {/* Sidebar TOC */}
+              <aside className="lg:w-64 flex-shrink-0 lg:self-start">
+                <TableOfContents items={tocItems} />
+              </aside>
+
+              {/* Main Content */}
+              <div className="flex-1 max-w-4xl">
+                
+                {/* Introduction */}
+                <div id="introduction" className="mb-16">
+                  <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">
+                    Understanding the M&A Journey
+                  </h2>
+                  <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                    <p className="mb-4">
+                      The M&A process typically takes 6-12 months from first contact to closing. Understanding each phase helps you stay organized, avoid common pitfalls, and maintain momentum when things slow down (and they will).
+                    </p>
+                    <p className="mb-4">
+                      Below is an interactive timeline showing all 5 phases and 14 key milestones. Click on any milestone to see detailed information, typical timelines, and what to watch out for.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </Container>
         </section>
 
         {/* Interactive Timeline */}
-        <section className="py-16 bg-livmo-light-neutral">
+        <section id="interactive-timeline" className="py-16 bg-livmo-light-neutral">
           <Container>
+            <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-8 text-center">
+              Interactive M&A Timeline
+            </h2>
             <InteractiveDealTimeline />
           </Container>
         </section>
 
         {/* Deal-Killer Traps */}
-        <section className="py-16 bg-white">
+        <section id="deal-killer-traps" className="py-16 bg-white">
           <Container size="md">
             <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-8 text-center">
               Common Deal-Killer Traps
@@ -146,7 +188,7 @@ export default function MAProcessPage() {
         </section>
 
         {/* Timeline Expectations */}
-        <section className="py-16 bg-gray-50">
+        <section id="timeline-expectations" className="py-16 bg-gray-50">
           <Container size="md">
             <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-8 text-center">
               Realistic Timeline Expectations
@@ -202,7 +244,7 @@ export default function MAProcessPage() {
         </section>
 
         {/* Momentum Tips */}
-        <section className="py-16 bg-white">
+        <section id="momentum-tips" className="py-16 bg-white">
           <Container size="md">
             <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-8 text-center">
               How to Keep Momentum
@@ -277,7 +319,7 @@ export default function MAProcessPage() {
                 href="https://go.livmo.com/meetings/go-livmo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-4 bg-livmo-gold text-livmo-navy font-semibold rounded-lg hover:bg-livmo-gold/90 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-lg"
+                className="inline-flex items-center px-8 py-4 bg-livmo-gold text-livmo-navy font-semibold rounded-md hover:bg-livmo-gold/90 transition-all duration-150 text-lg shadow-lg"
               >
                 Book Your Free Strategy Call
               </Link>
