@@ -88,8 +88,8 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({ items }) => {
     <>
       {/* Desktop: Sticky Sidebar */}
       <div className="hidden lg:block">
-        <div className="sticky top-24 max-h-[calc(100vh-120px)] overflow-y-auto">
-          <nav className="p-6 bg-white border border-gray-200 rounded-md">
+        <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto">
+          <nav className="p-6 bg-white border border-gray-200 rounded-md shadow-sm">
             <h2 className="text-sm font-bold text-livmo-navy uppercase tracking-wide mb-4">
               On This Page
             </h2>

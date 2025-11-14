@@ -123,7 +123,7 @@ export default function FinancialReportingPage() {
           <Container>
             <div className="lg:flex gap-12">
               {/* Sidebar TOC */}
-              <aside className="lg:w-64 flex-shrink-0">
+              <aside className="lg:w-64 flex-shrink-0 lg:self-start">
                 <TableOfContents items={tocItems} />
               </aside>
 
