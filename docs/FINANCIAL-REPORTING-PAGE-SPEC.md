@@ -18,23 +18,30 @@
 
 ## 🎨 **DESIGN PHILOSOPHY**
 
-### **"Cool" Elements:**
-- ✅ Interactive components (tabs, accordions, expandable sections)
-- ✅ Visual data representations (stat cards, progress indicators)
+### **"Premium Documentation" Approach:**
+- ✅ Long-form, scrollable content (like a well-designed PDF)
+- ✅ Everything visible - NO hidden/expandable content
+- ✅ Table of Contents for quick navigation
+- ✅ Sticky scroll progress indicator
+- ✅ Anchor links to jump between sections
+- ✅ Print-friendly layout
+
+### **"Cool" Elements (Subtle, Not Hidden):**
+- ✅ Visual data representations (inline charts, tables)
 - ✅ Real examples with numbers ($240K contract → $20K/month)
-- ✅ Before/After comparisons (bad P&L vs. clean P&L)
-- ✅ Warning cards with red accents (pitfalls)
-- ✅ Success metrics with gold accents (value creation)
+- ✅ Side-by-side comparisons (bad P&L vs. clean P&L)
+- ✅ Warning callouts with red accents (pitfalls)
+- ✅ Success callouts with gold accents
 - ✅ Icon-driven section headers
 - ✅ Downloadable templates with preview cards
-- ✅ Tooltips for technical terms
-- ✅ Smooth scroll animations
+- ✅ Smooth scroll-to-section animations
+- ✅ Hover states on links/cards
 
 ### **Educational Elements:**
 - ✅ Clear hierarchy (Introduction → Concepts → Deep-Dive → Action)
 - ✅ Real-world examples throughout
-- ✅ Step-by-step guides
-- ✅ Visual glossary for terms
+- ✅ Step-by-step guides (all visible)
+- ✅ Inline definitions for terms
 - ✅ Quick-reference checklists
 - ✅ Printable sections
 
@@ -56,30 +63,124 @@
 
 ---
 
-### **2. INTRODUCTION SECTION**
-**Background:** White  
-**Layout:** Full-width container
+### **2. TABLE OF CONTENTS (TOC)**
+**Background:** White with subtle border  
+**Layout:** Sticky sidebar (desktop) / Expandable section (mobile)  
+**Position:** Below hero, before main content
 
-#### **2A. Value Proposition Grid (3 Stat Cards)**
 ```
 ┌────────────────────────────────────────────────────────┐
-│  VALUE CREATION STATS - 3-column grid                  │
+│  📑 ON THIS PAGE                                       │
 │                                                         │
-│  [💰 3-5x]         [⚡ 60%]           [🎯 $1M+]       │
-│  Valuation         Faster Due         Potential        │
-│  Multiple Range    Diligence          Value Add        │
+│  Introduction                                          │
+│  ├─ Why Financial Accuracy Matters                    │
+│  └─ Common Financial Pitfalls                         │
 │                                                         │
-│  Clean financials  Organized books    Fix high-impact  │
-│  command premium   slash back-and-    blind spots to   │
-│  multiples         forth              unlock value     │
+│  Fundamental Concepts                                  │
+│  ├─ P&L vs. Balance Sheet                            │
+│  ├─ Cash vs. Accrual Accounting                       │
+│  ├─ Revenue Recognition                               │
+│  ├─ Add-Backs                                         │
+│  └─ SDE & Adjusted EBITDA                            │
+│                                                         │
+│  Income Statement Deep-Dive                           │
+│  ├─ Revenue                                           │
+│  ├─ Cost of Goods Sold (COGS)                        │
+│  ├─ Gross Margins                                     │
+│  ├─ Operating Expenses                                │
+│  └─ Net Profit & Flow-Through                        │
+│                                                         │
+│  Reconciliation Checklist                             │
+│  ├─ Bank-to-Book                                      │
+│  ├─ ARR/MRR vs. Deposits                             │
+│  ├─ Prepaids & Deferrals                             │
+│  └─ AR vs. Revenue Booked                            │
+│                                                         │
+│  Month-End Close Calendar                             │
+│                                                         │
+│  Data Integrity Audit Plan                            │
+│                                                         │
+│  Hot Tips & Common Mistakes                           │
+│                                                         │
+│  Templates & Downloads                                │
+│                                                         │
+│  Next Steps                                           │
 └────────────────────────────────────────────────────────┘
 ```
 
 **Design:**
-- Cards: White background, border, rounded-md
-- Number: 4xl, bold, livmo-gold color
-- Label: sm, semibold, livmo-navy
-- Description: xs, text-gray-600
+- **Desktop:** Sticky sidebar on left (250px wide)
+  - Stays visible as user scrolls
+  - Active section highlighted in gold
+  - Smooth scroll on click
+  - Compact, scannable
+
+- **Mobile:** Collapsible section at top
+  - "Jump to Section ▼" button
+  - Opens dropdown with all sections
+  - Closes after selection
+  - Icon indicates current position
+
+**Functionality:**
+- Click any item → smooth scroll to section
+- Active section auto-highlights
+- Scroll spy: Updates as user scrolls
+- Progress indicator (% of page read)
+
+---
+
+### **3. INTRODUCTION SECTION**
+**Background:** White  
+**Layout:** Full-width container
+
+#### **3A. Why Financial Accuracy Matters**
+**Layout:** Clean, readable prose with inline emphasis
+
+```
+┌────────────────────────────────────────────────────────┐
+│  Why Pinpoint Financial Accuracy Is a Sellability     │
+│  Superpower                                            │
+│                                                         │
+│  Clean, reconciled numbers aren't just nice to have—   │
+│  they're the foundation of buyer confidence and        │
+│  premium valuations. Here's why financial accuracy     │
+│  matters more than almost anything else in M&A:        │
+│                                                         │
+│  🎯 First Impressions Are Everything                   │
+│  When buyers first review your financials, they're     │
+│  making snap judgments about your business             │
+│  sophistication. Clean books signal a well-run         │
+│  company. Messy financials raise immediate red flags   │
+│  about operational discipline.                         │
+│                                                         │
+│  ⚡ Value Creation Happens Fast                        │
+│  A tidy P&L can materially impact your valuation in    │
+│  under 60 minutes of focused review. We've seen        │
+│  businesses add meaningful value by simply:            │
+│  • Properly categorizing COGS vs. OpEx                │
+│  • Documenting owner-related add-backs                 │
+│  • Reconciling the last 3 months of bank statements   │
+│                                                         │
+│  🚀 Clean Books Accelerate Everything                  │
+│  Organized reconciliations dramatically reduce         │
+│  back-and-forth during due diligence. What could       │
+│  take 90 days of painful data requests gets done       │
+│  in 30 days when your financials are audit-ready.      │
+│                                                         │
+│  Risk reduction = higher offers. Demonstrated control  │
+│  over revenue recognition and cost accounting          │
+│  minimizes perceived risk, which directly translates   │
+│  to better deal terms.                                 │
+└────────────────────────────────────────────────────────┘
+```
+
+**Design:**
+- Clean typography, generous line spacing
+- Inline bold for key terms
+- Icon emojis for visual breaks
+- Bullet points for scanability
+- No fake stats, just clear value prop
+- Conversational but authoritative tone
 
 #### **2B. Why Financial Accuracy Matters**
 **Layout:** 2-column (text + image/graphic)
@@ -134,29 +235,16 @@
 ---
 
 ### **4. FUNDAMENTAL CONCEPTS SECTION**
-**Background:** White  
-**Layout:** Interactive tabs or accordion
+**Background:** Gray-50 (alternating white)  
+**Layout:** Stacked concept cards - ALL VISIBLE
 
-#### **Concept Cards (5 concepts)**
+#### **5 Concept Cards (All Expanded)**
 
-**Option A: Tab Interface** (Recommended for desktop)
-```
-[P&L vs Balance Sheet] [Cash vs Accrual] [Revenue Recognition] [Add-Backs] [SDE & EBITDA]
-─────────────────────────────────────────────────────────────────────────────────────
-│                                                                                     │
-│  Content for selected tab displays here                                           │
-│  - Definition                                                                      │
-│  - Real example with numbers                                                      │
-│  - Visual diagram                                                                  │
-│                                                                                     │
-─────────────────────────────────────────────────────────────────────────────────────
-```
-
-**Option B: Expandable Cards** (Better for mobile)
-- 5 cards in grid (2 columns on desktop, 1 on mobile)
-- Click to expand inline
-- Collapsed: Title + icon + 1-line description
-- Expanded: Full content + example
+**Layout:** Vertical stack, alternating backgrounds for visual separation
+- Each concept fully visible (no tabs, no accordions)
+- 2-column layout on desktop (text + visual)
+- Single column on mobile
+- Numbered for easy reference
 
 **Content Structure (Each Concept):**
 ```
@@ -189,85 +277,105 @@
 ---
 
 ### **5. INCOME STATEMENT DEEP-DIVE SECTION**
-**Background:** Navy gradient (from-livmo-navy to-livmo-primary)  
-**Text:** White  
-**Layout:** Visual P&L breakdown
+**Background:** White  
+**Layout:** Fully visible P&L breakdown with inline explanations
 
-#### **Interactive P&L Explorer**
+#### **Complete P&L Anatomy (All Visible)**
+
+**Layout:** Single P&L with detailed explanations below each line item
 
 ```
 ┌────────────────────────────────────────────────────────┐
 │  INCOME STATEMENT ANATOMY                              │
-│                                                         │
-│  Click each section to learn more ↓                    │
+│  (Sample SaaS Business - $1.2M Annual Revenue)         │
 │                                                         │
 │  ┌──────────────────────────────────────────┐         │
-│  │ 📈 REVENUE                    $1,200,000 │ ←Click  │
-│  │   └─ Recurring Revenue         $1,000,000│         │
+│  │ 📈 REVENUE                    $1,200,000 │         │
+│  │   ├─ Recurring Revenue         $1,000,000│         │
 │  │   └─ Non-Recurring Revenue       $200,000│         │
-│  ├──────────────────────────────────────────┤         │
-│  │ 💰 COST OF GOODS SOLD (COGS)   ($300,000)│ ←Click  │
-│  │   └─ Hosting & Infrastructure    $150,000│         │
+│  │                                            │         │
+│  │ 💰 COST OF GOODS SOLD           ($300,000)│         │
+│  │   ├─ Hosting & Infrastructure    $150,000│         │
 │  │   └─ Support Staff Costs         $150,000│         │
-│  ├──────────────────────────────────────────┤         │
-│  │ 📊 GROSS PROFIT               $900,000    │         │
+│  │                                            │         │
+│  │ 📊 GROSS PROFIT                 $900,000  │         │
 │  │    Gross Margin: 75%                      │         │
-│  ├──────────────────────────────────────────┤         │
-│  │ 💼 OPERATING EXPENSES (OpEx)  ($600,000)│ ←Click  │
-│  │   └─ Sales & Marketing         $250,000  │         │
-│  │   └─ R&D                       $200,000  │         │
-│  │   └─ G&A                       $150,000  │         │
-│  ├──────────────────────────────────────────┤         │
-│  │ ✅ NET PROFIT                 $300,000    │         │
+│  │                                            │         │
+│  │ 💼 OPERATING EXPENSES           ($600,000)│         │
+│  │   ├─ Sales & Marketing           $250,000│         │
+│  │   ├─ Research & Development      $200,000│         │
+│  │   └─ General & Administrative    $150,000│         │
+│  │                                            │         │
+│  │ ✅ NET PROFIT                   $300,000  │         │
 │  │    Net Margin: 25%                        │         │
 │  └──────────────────────────────────────────┘         │
-│                                                         │
-│  [Expandable detail panel appears below on click]      │
 └────────────────────────────────────────────────────────┘
 ```
 
-**Design:**
-- P&L in card format with clean lines
-- Each line item is clickable/hoverable
-- On click: Expands below to show:
-  - What it includes
-  - Common mistakes
-  - Best practices
-  - Benchmark data (e.g., "Top SaaS = 75% gross margin")
-- Gold accent on hover
-- Smooth expansion animation
+**Then Below: Detailed Breakdown of Each Line (All Visible)**
 
-**Alternative: Side-by-Side Comparison**
+#### **1. Revenue - Deep Dive**
 ```
-BAD P&L                          CLEAN P&L
-────────────────────            ────────────────────
-Revenue: $1.2M                  Recurring: $1.0M
-                                Non-Recurring: $200K
-                                
-COGS: $500K (❌ Too High)      COGS: $300K (✅ Proper)
-                                
-"Consulting": $400K (❌)        Hosting: $150K (✅)
-                                Support: $150K (✅)
+┌────────────────────────────────────────────────────────┐
+│  📈 REVENUE                                            │
+│                                                         │
+│  What It Includes:                                     │
+│  • Recurring Revenue: Subscription, SaaS, retainers    │
+│  • Non-Recurring: One-time services, setup fees        │
+│                                                         │
+│  Why Segmentation Matters:                             │
+│  Buyers pay premium multiples for recurring revenue.   │
+│  Clear segmentation shows predictability.              │
+│                                                         │
+│  GAAP Compliance:                                      │
+│  Revenue must be recognized when earned, not when      │
+│  cash is received. Example:                            │
+│  • $240K annual contract signed Jan 1st               │
+│  • ❌ Wrong: Record $240K in January                  │
+│  • ✅ Right: Record $20K/month × 12 months            │
+│                                                         │
+│  Common Mistakes:                                      │
+│  ❌ Recording full contract value upfront              │
+│  ❌ Mixing recurring and one-time revenue              │
+│  ❌ Not documenting contract terms                     │
+│                                                         │
+│  Best Practice:                                        │
+│  ✅ Maintain MRR/ARR schedule separate from P&L       │
+│  ✅ Reconcile MRR to P&L revenue monthly              │
+│  ✅ Document all revenue recognition policies          │
+└────────────────────────────────────────────────────────┘
 ```
+
+#### **2. Cost of Goods Sold (COGS) - Deep Dive**
+```
+[Similar detailed breakdown for COGS]
+```
+
+#### **3. Gross Margin - Deep Dive**
+```
+[Similar detailed breakdown with benchmarks]
+```
+
+*And so on for each line item - ALL VISIBLE, NO CLICKING REQUIRED*
 
 ---
 
 ### **6. RECONCILIATION CHECKLIST SECTION**
-**Background:** White  
-**Layout:** Interactive checklist
+**Background:** Gray-50  
+**Layout:** Stacked checklists - ALL VISIBLE
 
-#### **4-Tab Reconciliation Guide**
+#### **4 Critical Reconciliations (All Visible)**
 
-**Tabs:**
-1. Bank-to-Book
-2. ARR/MRR vs Deposits
-3. Prepaids & Deferrals
-4. AR vs Revenue
+**Layout:** Vertical stack of detailed checklists
+- Each reconciliation fully expanded
+- Numbered steps with checkboxes (visual)
+- Download templates inline
+- No tabs, no hidden content
 
-**Tab Content Structure:**
+**Structure for Each:**
 ```
 ┌────────────────────────────────────────────────────────┐
-│  [Tab Name]                                            │
+│  1️⃣ RECONCILIATION NAME                                │
 │                                                         │
 │  What It Means:                                        │
 │  Brief explanation of the reconciliation               │
@@ -279,20 +387,24 @@ COGS: $500K (❌ Too High)      COGS: $300K (✅ Proper)
 │  □ Step 1: [Actionable instruction]                   │
 │  □ Step 2: [Actionable instruction]                   │
 │  □ Step 3: [Actionable instruction]                   │
+│  □ Step 4: [Actionable instruction]                   │
 │                                                         │
-│  Common Issues:                                        │
-│  • Problem 1 + Solution                                │
-│  • Problem 2 + Solution                                │
+│  Common Issues & Solutions:                            │
+│  • Problem 1 → Solution                                │
+│  • Problem 2 → Solution                                │
 │                                                         │
-│  [Download Template Button]                            │
+│  Frequency: Daily | Weekly | Monthly                   │
+│                                                         │
+│  [Download Reconciliation Template]                    │
 └────────────────────────────────────────────────────────┘
 ```
 
 **Design:**
-- Checkboxes for each step (visual only, not functional)
-- Download button for related template
-- Icons for each tab
-- Clean, scannable layout
+- Checkboxes for each step (visual, printable)
+- Gold download buttons
+- Icons for each reconciliation type
+- Clean, scannable, print-friendly
+- Alternating backgrounds for visual separation
 
 ---
 
