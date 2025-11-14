@@ -1032,18 +1032,6 @@ export default function FinancialReportingPage() {
                         </Link>
                         <p className="text-sm text-gray-600 mt-1">Learn about common pitfalls that buyers look for</p>
                       </div>
-                      <div>
-                        <Link
-                          href="https://www.maxio.com/resources/the-top-red-flags-in-saas-financial-reporting"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-livmo-primary hover:text-livmo-navy font-semibold inline-flex items-center"
-                        >
-                          Maxio: Financial Data Hygiene Starter Kit
-                          <ExternalLink className="ml-2 h-4 w-4" />
-                        </Link>
-                        <p className="text-sm text-gray-600 mt-1">3 FREE resources to tighten up your processes</p>
-                      </div>
                     </div>
                   </div>
                 </div>
