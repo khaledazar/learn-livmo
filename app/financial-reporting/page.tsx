@@ -141,7 +141,7 @@ export default function FinancialReportingPage() {
                     </h3>
                     <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                       <p className="mb-4">
-                        Clean, reconciled numbers aren't just nice to have—they're the foundation of buyer confidence and premium valuations. Here's why financial accuracy matters more than almost anything else in M&A:
+                        Clean, reconciled numbers aren't just nice to have—they're the foundation of buyer confidence and premium valuations. A well-structured P&L can literally <strong>add millions of dollars to your company's value</strong>. Here's why financial accuracy matters more than almost anything else in M&A:
                       </p>
 
                       <div className="my-6 p-6 bg-gray-50 border-l-4 border-livmo-primary rounded-md">
@@ -179,6 +179,26 @@ export default function FinancialReportingPage() {
                         </p>
                       </div>
                     </div>
+
+                    {/* Reference to P&L 101 Guide */}
+                    <div className="mt-8 p-6 bg-blue-50 border border-blue-200 rounded-md">
+                      <h4 className="font-semibold text-livmo-navy mb-2 flex items-center">
+                        <FileText className="h-5 w-5 mr-2 text-livmo-primary" />
+                        Comprehensive Guide Available
+                      </h4>
+                      <p className="text-gray-700 mb-3">
+                        For a complete deep-dive on how to structure your P&L to maximize exit valuation, see our comprehensive guide:
+                      </p>
+                      <Link
+                        href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                      >
+                        The P&L 101: A Guide to Increasing Your Company's Exit Valuation
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
                   </div>
 
                   {/* Common Pitfalls */}
@@ -192,8 +212,11 @@ export default function FinancialReportingPage() {
                           <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
                           Mismatched Revenue Recognition vs. Cash Collection
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-sm mb-2">
                           Revenue recorded doesn't align with cash collection or contract terms. This destroys buyer trust immediately and raises questions about your understanding of basic accounting principles.
+                        </p>
+                        <p className="text-xs text-gray-500 italic">
+                          Non-compliance with ASC 606 revenue standards can result in financial restatements that instantly derail a deal.
                         </p>
                       </div>
 
@@ -202,10 +225,35 @@ export default function FinancialReportingPage() {
                           <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
                           Incorrect Cost-of-Goods-Sold (COGS) Classification
                         </h4>
-                        <p className="text-gray-600 text-sm">
+                        <p className="text-gray-600 text-sm mb-2">
                           Mixing pass-through costs with core expenses or misclassifying operational costs as COGS inflates gross margins artificially. Buyers will catch this in diligence and may walk away.
                         </p>
+                        <p className="text-xs text-gray-500 italic">
+                          Poor cost categorization signals operational discipline issues and forces buyers to discount your valuation.
+                        </p>
                       </div>
+                    </div>
+
+                    {/* Audit Readiness Reference */}
+                    <div className="mt-6 p-6 bg-yellow-50 border border-yellow-200 rounded-md">
+                      <h4 className="font-semibold text-livmo-navy mb-2">Avoiding Red Flags in Due Diligence</h4>
+                      <p className="text-gray-700 text-sm mb-3">
+                        Learn how to identify and fix common red flags before they hurt your valuation. The Maxio Billing Playbook covers:
+                      </p>
+                      <ul className="text-sm text-gray-700 space-y-1 mb-3 list-disc ml-5">
+                        <li>ASC 606 compliance and revenue recognition standards</li>
+                        <li>Financial hygiene practices for audit readiness</li>
+                        <li>Monthly reconciliation workflows</li>
+                      </ul>
+                      <Link
+                        href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                      >
+                        Startup_Billing_Playbook_Part_3_Maxio.pdf
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -306,6 +354,21 @@ export default function FinancialReportingPage() {
                         <p className="ml-4 mt-2"><strong className="text-red-600">❌ Wrong:</strong> Record entire $240K in January when contract is signed</p>
                         <p className="ml-4"><strong className="text-green-600">✅ Right:</strong> Amortize over 12 months → $20K/month × 12 months</p>
                         <p className="ml-4 mt-2 text-sm italic">This matches revenue to the period when service is delivered, not when cash is collected.</p>
+                      </div>
+
+                      <div className="mt-4 p-4 bg-gray-50 rounded border border-gray-200">
+                        <p className="text-sm text-gray-700 mb-2">
+                          <strong>Deep Dive Available:</strong> For a comprehensive guide on revenue recognition and recurring revenue strategies that maximize valuation:
+                        </p>
+                        <Link
+                          href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                        >
+                          Exit Valuation Deep Dive: Unlocking Value with Revenue Recognition & Recurring Revenue
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -453,7 +516,18 @@ export default function FinancialReportingPage() {
                       </div>
                       <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
                         <strong className="text-livmo-navy block mb-2">Why Segmentation Matters:</strong>
-                        <p>Buyers pay premium multiples for recurring revenue because it's predictable. Clear segmentation demonstrates business model strength and revenue quality.</p>
+                        <p className="mb-3">Buyers pay premium multiples for recurring revenue because it's predictable. Clear segmentation demonstrates business model strength and revenue quality.</p>
+                        <p className="text-sm italic">
+                          <strong>Key Metric:</strong> Net Dollar Retention (NDR) and expansion revenue from usage-based or hybrid pricing models can significantly increase your valuation multiple. Learn more in{' '}
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-livmo-primary hover:text-livmo-navy font-semibold"
+                          >
+                            Startup_Billing_Playbook_Part_2_Maxio.pdf
+                          </Link>
+                        </p>
                       </div>
                       <div>
                         <strong className="text-livmo-navy block mb-2">Common Mistakes:</strong>
@@ -864,19 +938,51 @@ export default function FinancialReportingPage() {
                           <FileText className="h-6 w-6 text-green-600" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Chart of Accounts Template</h3>
-                          <p className="text-sm text-gray-600 mb-4">Organize your accounts for cleaner reporting</p>
-                          <Link
-                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
-                          >
-                            Download <ExternalLink className="ml-1 h-4 w-4" />
-                          </Link>
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Chart of Accounts for SaaS</h3>
+                          <p className="text-sm text-gray-600 mb-4">SaaS-specific COA structure to properly separate COGS vs. OpEx and calculate premium metrics like Gross Margin, CAC, and LTV</p>
+                          <div className="flex flex-col gap-2">
+                            <Link
+                              href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                            >
+                              SaaS_COA_Detailed_v3.xlsx <ExternalLink className="ml-1 h-3 w-3" />
+                            </Link>
+                            <Link
+                              href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                            >
+                              Sample Chart of Accounts for a SaaS Company.txt <ExternalLink className="ml-1 h-3 w-3" />
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Additional Resources Section */}
+                  <div className="mt-12 p-6 bg-gray-50 rounded-md border border-gray-200">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Billing Infrastructure & Systems</h3>
+                    <p className="text-gray-700 mb-4">
+                      Choosing the right billing platform is critical for managing subscription lifecycles and avoiding engineering debt that constrains growth:
+                    </p>
+                    <ul className="text-sm text-gray-700 space-y-2 mb-4 list-disc ml-5">
+                      <li>Why a dedicated Billing Platform beats building in-house</li>
+                      <li>Managing proration, upgrades, and flexible pricing</li>
+                      <li>Aligning billing cycles with cash flow needs</li>
+                    </ul>
+                    <Link
+                      href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                    >
+                      Startup_Billing_Playbook_Part_1_Maxio.pdf
+                      <ExternalLink className="ml-2 h-4 w-4" />
+                    </Link>
                   </div>
 
                   {/* External Resources */}
