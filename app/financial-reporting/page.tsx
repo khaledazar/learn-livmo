@@ -369,6 +369,563 @@ export default function FinancialReportingPage() {
                   </div>
                 </div>
 
+                {/* Income Statement Deep-Dive Section */}
+                <div id="income-statement" className="mb-16">
+                  <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">Income Statement Deep-Dive</h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Understanding every line of your P&L is critical for presenting clean financials to buyers. Here's how to optimize each section.
+                  </p>
+
+                  {/* Sample P&L Display */}
+                  <div className="mb-10 p-6 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white rounded-md">
+                    <h3 className="text-xl font-semibold mb-6">Sample Income Statement Anatomy</h3>
+                    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-md font-mono text-sm">
+                      <div className="flex justify-between border-b border-white/20 pb-2 mb-4">
+                        <span className="font-bold">INCOME STATEMENT</span>
+                        <span className="text-gray-300">Sample SaaS Business</span>
+                      </div>
+                      
+                      <div className="space-y-2">
+                        <div className="flex justify-between items-center py-2 border-b border-white/10">
+                          <span className="font-semibold">📈 REVENUE</span>
+                          <span className="font-bold">$1,200,000</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300">
+                          <span>Recurring Revenue (ARR)</span>
+                          <span>$1,000,000</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300 pb-2">
+                          <span>Non-Recurring Revenue</span>
+                          <span>$200,000</span>
+                        </div>
+                        
+                        <div className="flex justify-between items-center py-2 border-b border-white/10">
+                          <span className="font-semibold">💰 COST OF GOODS SOLD</span>
+                          <span className="font-bold">($300,000)</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300">
+                          <span>Hosting & Infrastructure</span>
+                          <span>$150,000</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300 pb-2">
+                          <span>Support Staff Costs</span>
+                          <span>$150,000</span>
+                        </div>
+                        
+                        <div className="flex justify-between items-center py-3 bg-white/10 px-4 rounded">
+                          <span className="font-bold">📊 GROSS PROFIT</span>
+                          <div className="text-right">
+                            <div className="font-bold">$900,000</div>
+                            <div className="text-sm text-livmo-gold">75% Margin</div>
+                          </div>
+                        </div>
+                        
+                        <div className="flex justify-between items-center py-2 border-b border-white/10 mt-4">
+                          <span className="font-semibold">💼 OPERATING EXPENSES</span>
+                          <span className="font-bold">($600,000)</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300">
+                          <span>Sales & Marketing</span>
+                          <span>$250,000</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300">
+                          <span>Research & Development</span>
+                          <span>$200,000</span>
+                        </div>
+                        <div className="flex justify-between pl-4 text-sm text-gray-300 pb-2">
+                          <span>General & Administrative</span>
+                          <span>$150,000</span>
+                        </div>
+                        
+                        <div className="flex justify-between items-center py-3 bg-livmo-gold/20 px-4 rounded mt-4">
+                          <span className="font-bold">✅ NET PROFIT</span>
+                          <div className="text-right">
+                            <div className="font-bold">$300,000</div>
+                            <div className="text-sm text-livmo-gold">25% Net Margin</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Revenue Deep-Dive */}
+                  <div id="revenue" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">📈 Revenue - Deep Dive</h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Includes:</strong>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li><strong>Recurring Revenue:</strong> Subscriptions, SaaS contracts, retainers</li>
+                          <li><strong>Non-Recurring Revenue:</strong> One-time services, setup fees, professional services</li>
+                        </ul>
+                      </div>
+                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+                        <strong className="text-livmo-navy block mb-2">Why Segmentation Matters:</strong>
+                        <p>Buyers pay premium multiples for recurring revenue because it's predictable. Clear segmentation demonstrates business model strength and revenue quality.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Common Mistakes:</strong>
+                        <ul className="ml-6 space-y-1 list-disc text-red-600">
+                          <li>❌ Recording full contract value upfront instead of monthly recognition</li>
+                          <li>❌ Mixing recurring and one-time revenue in a single line</li>
+                          <li>❌ Not documenting revenue recognition policy</li>
+                        </ul>
+                      </div>
+                      <div className="bg-blue-50 p-4 rounded border-l-4 border-livmo-primary">
+                        <strong className="text-livmo-navy block mb-2">✅ Best Practice:</strong>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li>Maintain separate MRR/ARR schedule outside of P&L</li>
+                          <li>Reconcile MRR to P&L revenue monthly</li>
+                          <li>Document all revenue recognition policies in writing</li>
+                          <li>Show cohort analysis for recurring vs. one-time</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* COGS Deep-Dive */}
+                  <div id="cogs" className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">💰 Cost of Goods Sold (COGS) - Deep Dive</h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Includes:</strong>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li>Hosting, infrastructure, and cloud costs directly tied to service delivery</li>
+                          <li>Support staff salaries for customer-facing technical support</li>
+                          <li>Third-party APIs or services required to deliver your product</li>
+                        </ul>
+                      </div>
+                      <div className="bg-yellow-50 p-4 rounded border-l-4 border-yellow-500">
+                        <strong className="text-livmo-navy block mb-2">⚠️ Categorization Warning:</strong>
+                        <p>Avoid the "Consulting" catch-all. Buyers will dig into this and may perceive it as hidden costs or poor accounting discipline. Always itemize pass-through services and project-based costs separately.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">COGS vs. OpEx:</strong>
+                        <p className="mb-2">A common mistake is mixing operational expenses into COGS. Here's the difference:</p>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li><strong>COGS:</strong> Costs that scale with revenue (hosting per customer, support hours)</li>
+                          <li><strong>OpEx:</strong> Fixed costs that don't scale directly (office rent, executive salaries)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Gross Margins */}
+                  <div id="gross-margins" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">📊 Gross Margins - Deep Dive</h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Calculation:</strong>
+                        <div className="bg-gray-100 p-4 rounded font-mono text-sm">
+                          <p>Gross Margin ($) = Revenue - COGS</p>
+                          <p>Gross Margin (%) = (Gross Margin $ / Revenue) × 100</p>
+                          <p className="mt-2 text-green-600">Example: ($1.2M - $300K) / $1.2M = 75%</p>
+                        </div>
+                      </div>
+                      <div className="bg-green-50 p-4 rounded border-l-4 border-green-500">
+                        <strong className="text-livmo-navy block mb-2">SaaS Benchmarks:</strong>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li><strong>Top Quartile SaaS:</strong> 75-85% gross margin</li>
+                          <li><strong>Median SaaS:</strong> 65-75% gross margin</li>
+                          <li><strong>Below 65%:</strong> Buyer questions on scalability</li>
+                        </ul>
+                        <p className="mt-2 italic text-sm">Higher margins = higher valuation multiples</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Operating Expenses */}
+                  <div id="opex" className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">💼 Operating Expenses (OpEx) - Deep Dive</h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Core Buckets:</strong>
+                        <ul className="ml-6 space-y-2 list-disc">
+                          <li><strong>Sales & Marketing (S&M):</strong> Salaries, advertising, lead generation, sales tools</li>
+                          <li><strong>Research & Development (R&D):</strong> Product development, engineering salaries, software licenses</li>
+                          <li><strong>General & Administrative (G&A):</strong> Executive salaries, office rent, legal, accounting</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">One-off Expenses to Call Out:</strong>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li>Litigation or legal settlements</li>
+                          <li>Restructuring or severance costs</li>
+                          <li>Owner personal expenses (clearly document for add-backs)</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Net Profit */}
+                  <div id="net-profit" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">✅ Net Profit & Flow-Through - Deep Dive</h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What Drives Profit:</strong>
+                        <p>Net profit is what remains after all operating expenses. It's determined by how efficiently you manage OpEx while maintaining revenue growth.</p>
+                      </div>
+                      <div className="bg-blue-50 p-4 rounded border-l-4 border-livmo-primary">
+                        <strong className="text-livmo-navy block mb-2">Flow-Through & Valuation Impact:</strong>
+                        <p>Flow-through measures how much of each incremental revenue dollar drops to the bottom line. Clean flow-through (minimal expense bloat) supports higher exit multiples because it shows operational efficiency.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Reconciliation Checklist Section */}
+                <div id="reconciliation" className="mb-16">
+                  <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">Reconciliation Checklist</h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    Clean reconciliations are the foundation of buyer trust. Here are the four critical reconciliations every business should perform regularly.
+                  </p>
+
+                  {/* Bank-to-Book */}
+                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-primary rounded-md shadow-sm">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
+                      <Shield className="h-6 w-6 mr-3 text-livmo-primary" />
+                      1. Bank-to-Book Reconciliation
+                    </h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Means:</strong>
+                        <p>Match your bank statements to your general ledger to ensure every transaction is recorded accurately.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Why It Matters:</strong>
+                        <p>This is the most fundamental reconciliation. Discrepancies here signal poor controls and raise immediate red flags.</p>
+                      </div>
+                      <div className="bg-gray-50 p-4 rounded">
+                        <strong className="text-livmo-navy block mb-2">How To Do It:</strong>
+                        <div className="space-y-2">
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 1:</strong> Download bank statement for the period</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 2:</strong> Compare ending balance to GL cash account</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 3:</strong> Identify and document all outstanding items (deposits in transit, outstanding checks)</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 4:</strong> Resolve discrepancies within 48 hours</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Frequency:</strong>
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm font-semibold">Daily or Weekly</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* ARR/MRR vs Deposits */}
+                  <div className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
+                      <TrendingUp className="h-6 w-6 mr-3 text-livmo-primary" />
+                      2. ARR/MRR vs. Deposits Reconciliation
+                    </h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Means:</strong>
+                        <p>Compare your MRR/ARR schedules against actual cash deposits to identify timing gaps, refunds, or churn.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Why It Matters:</strong>
+                        <p>This reconciliation proves that your recurring revenue is real and collectible. Buyers scrutinize this heavily.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded border border-gray-200">
+                        <strong className="text-livmo-navy block mb-2">How To Do It:</strong>
+                        <div className="space-y-2">
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 1:</strong> Pull MRR schedule from billing system</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 2:</strong> Compare to actual deposits for the same period</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 3:</strong> Identify timing gaps (annual vs. monthly billing, payment delays)</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 4:</strong> Document refunds, chargebacks, and churn</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Frequency:</strong>
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm font-semibold">Monthly</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Prepaids & Deferrals */}
+                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-gold rounded-md shadow-sm">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
+                      <Calendar className="h-6 w-6 mr-3 text-livmo-primary" />
+                      3. Prepaids & Deferrals Roll-forwards
+                    </h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Means:</strong>
+                        <p>Track all prepaid expenses and deferred revenues with roll-forward schedules showing beginning balance, additions, amortization, and ending balance.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Why It Matters:</strong>
+                        <p>Proper deferral accounting is essential for accurate GAAP financials. This is a common area where buyers find issues.</p>
+                      </div>
+                      <div className="bg-gray-50 p-4 rounded">
+                        <strong className="text-livmo-navy block mb-2">How To Do It:</strong>
+                        <div className="space-y-2">
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 1:</strong> List all prepaid expenses and deferred revenues</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 2:</strong> Create roll-forward schedule for each item</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 3:</strong> Post monthly amortization journal entries</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 4:</strong> Verify ending balances tie to Balance Sheet</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Frequency:</strong>
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm font-semibold">Monthly</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* AR vs Revenue */}
+                  <div className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
+                      <FileText className="h-6 w-6 mr-3 text-livmo-primary" />
+                      4. Accounts Receivable vs. Revenue Booked
+                    </h3>
+                    <div className="space-y-4 text-gray-700">
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">What It Means:</strong>
+                        <p>Reconcile your AR aging to revenue booked on the P&L to ensure revenue recognition is accurate.</p>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Why It Matters:</strong>
+                        <p>Stale AR (>90 days) may indicate revenue recognition issues or collection problems—both major red flags.</p>
+                      </div>
+                      <div className="bg-white p-4 rounded border border-gray-200">
+                        <strong className="text-livmo-navy block mb-2">How To Do It:</strong>
+                        <div className="space-y-2">
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 1:</strong> Run AR aging report from your accounting system</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 2:</strong> Compare total AR to P&L revenue for the period</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 3:</strong> Identify and write off uncollectible receivables</span>
+                          </label>
+                          <label className="flex items-start gap-3">
+                            <input type="checkbox" className="mt-1" disabled />
+                            <span><strong>Step 4:</strong> Document collection efforts for overdue invoices</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div>
+                        <strong className="text-livmo-navy block mb-2">Frequency:</strong>
+                        <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm font-semibold">Monthly</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hot Tips & Common Mistakes */}
+                <div id="hot-tips" className="mb-16">
+                  <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">Hot Tips & Common Mistakes</h2>
+                  
+                  <div className="grid gap-6">
+                    {/* Consulting Catch-All */}
+                    <div className="p-6 bg-yellow-50 border-l-4 border-yellow-500 rounded-md">
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
+                        <AlertTriangle className="h-5 w-5 mr-2 text-yellow-600" />
+                        "Consulting" Catch-All Traps
+                      </h3>
+                      <div className="text-gray-700">
+                        <p className="mb-2"><strong className="text-red-600">Danger:</strong> Hiding true project costs in a generic "Consulting" expense line skews your gross margins and raises immediate questions.</p>
+                        <p><strong className="text-green-600">Solution:</strong> Itemize all pass-through services by category (e.g., "Third-Party Development", "Contract Design Services"). Transparency builds trust.</p>
+                      </div>
+                    </div>
+
+                    {/* Owner Expenses */}
+                    <div className="p-6 bg-blue-50 border-l-4 border-livmo-primary rounded-md">
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
+                        <Lightbulb className="h-5 w-5 mr-2 text-livmo-primary" />
+                        Transparent Owner-Expense Categorization
+                      </h3>
+                      <div className="text-gray-700">
+                        <p className="mb-2"><strong className="text-red-600">Pitfall:</strong> Undisclosed owner perks (personal vehicles, family trips) reduce buyer trust when discovered.</p>
+                        <p><strong className="text-green-600">Best Practice:</strong> Clearly label owner expenses in a separate line and document them for add-backs. Make it easy for buyers to adjust.</p>
+                      </div>
+                    </div>
+
+                    {/* Quick Wins */}
+                    <div className="p-6 bg-green-50 border-l-4 border-green-500 rounded-md">
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
+                        <CheckCircle2 className="h-5 w-5 mr-2 text-green-600" />
+                        Quick-Win Blind-Spot Closures
+                      </h3>
+                      <div className="text-gray-700">
+                        <p className="mb-2">Look for "$1M+/month" anomalies in your P&L detail view. These are usually:</p>
+                        <ul className="ml-6 space-y-1 list-disc">
+                          <li>Duplicate entries from accounting system migrations</li>
+                          <li>Misclassified one-time revenues showing as recurring</li>
+                          <li>Incorrectly capitalized expenses</li>
+                        </ul>
+                        <p className="mt-2"><strong className="text-green-600">Impact:</strong> Fixing these can immediately clean your financials and add credibility.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Templates & Downloads Section */}
+                <div id="templates" className="mb-16">
+                  <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">Templates & Downloads</h2>
+                  <p className="text-lg text-gray-600 mb-8">
+                    All templates are free and ready to use. Download individually or get the complete toolkit.
+                  </p>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Template Card 1 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-livmo-primary/10 rounded-md flex items-center justify-center">
+                          <Download className="h-6 w-6 text-livmo-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Reconciliation Spreadsheets</h3>
+                          <p className="text-sm text-gray-600 mb-4">Bank, AR, and deferrals templates with pre-formatted formulas</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                          >
+                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Template Card 2 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-livmo-gold/20 rounded-md flex items-center justify-center">
+                          <FileSpreadsheet className="h-6 w-6 text-livmo-gold" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Variance-Analysis Workbook</h3>
+                          <p className="text-sm text-gray-600 mb-4">Multi-sheet model for revenue and expense variance tracking</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                          >
+                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Template Card 3 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center">
+                          <CheckCircle2 className="h-6 w-6 text-livmo-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Month-End Checklist</h3>
+                          <p className="text-sm text-gray-600 mb-4">Day-by-day task list with RACI matrix embedded</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                          >
+                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Template Card 4 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-green-50 rounded-md flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-green-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Chart of Accounts Template</h3>
+                          <p className="text-sm text-gray-600 mb-4">Organize your accounts for cleaner reporting</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                          >
+                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* External Resources */}
+                  <div className="mt-12 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">External Resources</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <Link
+                          href="https://www.maxio.com/blog/top-red-flags-in-saas-financial-reporting"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-livmo-primary hover:text-livmo-navy font-semibold inline-flex items-center"
+                        >
+                          Maxio: Top Red Flags in SaaS Financial Reporting
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
+                        <p className="text-sm text-gray-600 mt-1">Learn about common pitfalls that buyers look for</p>
+                      </div>
+                      <div>
+                        <Link
+                          href="https://www.maxio.com/resources/the-top-red-flags-in-saas-financial-reporting"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-livmo-primary hover:text-livmo-navy font-semibold inline-flex items-center"
+                        >
+                          Maxio: Financial Data Hygiene Starter Kit
+                          <ExternalLink className="ml-2 h-4 w-4" />
+                        </Link>
+                        <p className="text-sm text-gray-600 mt-1">3 FREE resources to tighten up your processes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Next Steps CTA */}
                 <div id="next-steps" className="mt-16 p-8 bg-gradient-to-br from-livmo-navy to-livmo-primary text-white rounded-md">
                   <h2 className="text-2xl font-bold mb-4">Ready to Clean Up Your Financials?</h2>
