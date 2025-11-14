@@ -678,29 +678,37 @@
 
 ---
 
-## 🎨 **INTERACTIVE ELEMENTS**
+## 🎨 **INTERACTIVE ELEMENTS** (Subtle, Not Hidden)
+
+### **Table of Contents:**
+- Sticky sidebar on desktop (always visible)
+- Active section highlights as you scroll
+- Click to smooth scroll to section
+- Progress indicator shows % of page read
 
 ### **Hover States:**
 - Cards: Border changes to livmo-primary + shadow lift
-- Buttons: Slight scale (1.02x) + opacity change
+- Buttons: Slight opacity change (no scale)
 - Links: Underline appears
-- Template cards: Glow effect
+- Template cards: Subtle shadow increase
 
 ### **Click Interactions:**
-- Tabs: Smooth slide transition
-- Accordions: Height animation (300ms)
-- Expandable sections: Fade in content
-- Download buttons: Brief scale down then up (feedback)
+- TOC links: Smooth scroll to section (300ms)
+- Download buttons: Brief feedback animation
+- Anchor links: Smooth scroll navigation
+- No tabs, no accordions, no expandable content
 
-### **Scroll Animations:**
-- Fade in sections as they enter viewport
-- Stat counters animate on first view
-- Timeline items appear sequentially
+### **Scroll Behavior:**
+- Smooth scroll to anchors
+- TOC auto-updates active section
+- Progress bar at top fills as you scroll
+- Subtle fade-in for sections (optional)
 
-### **Tooltips:**
-- Hover on technical terms (GAAP, EBITDA, etc.)
-- Small popup with definition
-- Don't overuse - only for critical terms
+### **Print-Friendly:**
+- All content visible for printing
+- No hidden elements
+- Clean page breaks
+- Checkboxes render properly
 
 ---
 
@@ -709,20 +717,23 @@
 ### **Responsive Breakpoints:**
 - **Mobile (<768px):**
   - Single column layout
-  - Tabs become accordions
-  - Stat cards stack vertically
+  - TOC becomes dropdown at top (not sticky)
+  - All content stacks vertically
   - Download buttons full-width
   - Timeline becomes vertical list
+  - 2-column tables become stacked
 
 - **Tablet (768px-1024px):**
-  - 2-column grids
-  - Tabs remain tabs
+  - TOC as dropdown (not sticky)
+  - 2-column grids where applicable
   - Reduced padding
+  - Side-by-side comparisons maintained
 
 - **Desktop (>1024px):**
-  - Full 3-column grids where applicable
-  - Side-by-side comparisons
-  - Maximum 1280px content width
+  - Sticky TOC sidebar (250px)
+  - 2-column layouts for comparisons
+  - Full-width content area (max 1280px)
+  - Optimal reading experience
 
 ---
 
@@ -740,36 +751,41 @@ Once live, track:
 
 ## ⚡ **QUICK WINS FOR "COOL" FACTOR**
 
-1. **Animated Stat Counters** - Numbers count up on first view
-2. **Progress Indicator** - Show % of page read
-3. **Interactive P&L** - Click sections to expand
-4. **Hover Previews** - Template thumbnails enlarge on hover
-5. **Copy-to-Clipboard** - For formulas and code snippets
-6. **Printable Sections** - "Print this checklist" buttons
-7. **Share Buttons** - LinkedIn, email sharing for specific sections
-8. **Bookmark Feature** - "Save for later" within page
-9. **Estimated Reading Time** - "15 min read" at top
-10. **Table of Contents** - Sticky sidebar on desktop
+1. **Sticky Table of Contents** - Always know where you are
+2. **Progress Indicator** - Visual bar shows % of page read
+3. **Smooth Scroll Navigation** - Click TOC → glide to section
+4. **Printable Format** - All content visible, print-friendly
+5. **Estimated Reading Time** - "18 min read" at top
+6. **Visual Checklistslists** - Professional, scannable
+7. **Template Preview Cards** - Beautiful showcase of downloads
+8. **Side-by-Side Comparisons** - Bad vs Good examples
+9. **Inline Examples** - Real numbers, real scenarios
+10. **Clean, Scannable Layout** - Easy to find what you need
 
 ---
 
 ## 🛠️ **TECHNICAL COMPONENTS NEEDED**
 
 ### **New Components to Build:**
-1. `InteractiveTabs` - Tab interface for concepts
-2. `ExpandableCard` - Click to expand inline
-3. `TimelineComponent` - Visual timeline for month-end
-4. `StatCounter` - Animated number counter
-5. `TemplateCard` - Showcase template with download
-6. `TooltipWrapper` - Hover definitions
-7. `ProgressIndicator` - Scroll progress bar
-8. `ComparisonTable` - Bad vs Good P&L
+1. `TableOfContents` - Sticky sidebar TOC with scroll spy
+2. `TimelineComponent` - Visual timeline (always visible)
+3. `TemplateCard` - Showcase template with download
+4. `ProgressIndicator` - Scroll progress bar at top
+5. `ComparisonTable` - Side-by-side P&L comparison
+6. `ChecklistCard` - Visual checkboxes with steps
+7. `CalloutBox` - Warning/Success/Info callouts
 
 ### **Existing Components to Use:**
 - `ProfessionalHero` ✅
 - `ContentSection` ✅
 - `FeatureCard` ✅
 - `Container` ✅
+
+### **Components NO LONGER NEEDED:**
+- ~~`InteractiveTabs`~~ - Everything visible, no tabs
+- ~~`ExpandableCard`~~ - Everything visible, no expansion
+- ~~`TooltipWrapper`~~ - Inline definitions instead
+- ~~`StatCounter`~~ - No fake stats
 
 ---
 
