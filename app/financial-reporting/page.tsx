@@ -121,9 +121,9 @@ export default function FinancialReportingPage() {
         {/* Main Content with Sidebar TOC */}
         <section className="py-16 lg:py-20 bg-white">
           <Container>
-            <div className="flex gap-12">
+            <div className="lg:flex gap-12">
               {/* Sidebar TOC */}
-              <aside className="w-64 flex-shrink-0">
+              <aside className="lg:w-64 flex-shrink-0">
                 <TableOfContents items={tocItems} />
               </aside>
 
@@ -144,9 +144,8 @@ export default function FinancialReportingPage() {
                         Clean, reconciled numbers aren't just nice to have—they're the foundation of buyer confidence and premium valuations. Here's why financial accuracy matters more than almost anything else in M&A:
                       </p>
 
-                      <div className="my-6 p-6 bg-blue-50 border-l-4 border-livmo-primary rounded-md">
-                        <h4 className="font-semibold text-livmo-navy mb-2 flex items-center">
-                          <span className="text-2xl mr-3">🎯</span>
+                      <div className="my-6 p-6 bg-gray-50 border-l-4 border-livmo-primary rounded-md">
+                        <h4 className="font-semibold text-livmo-navy mb-2">
                           First Impressions Are Everything
                         </h4>
                         <p className="text-gray-700 mb-0">
@@ -154,24 +153,22 @@ export default function FinancialReportingPage() {
                         </p>
                       </div>
 
-                      <div className="my-6 p-6 bg-gold-50 border-l-4 border-livmo-gold rounded-md">
-                        <h4 className="font-semibold text-livmo-navy mb-2 flex items-center">
-                          <span className="text-2xl mr-3">⚡</span>
+                      <div className="my-6 p-6 bg-gray-50 border-l-4 border-livmo-gold rounded-md">
+                        <h4 className="font-semibold text-livmo-navy mb-2">
                           Value Creation Happens Fast
                         </h4>
                         <p className="text-gray-700 mb-3">
                           A tidy P&L can materially impact your valuation in under 60 minutes of focused review. We've seen businesses add meaningful value by simply:
                         </p>
-                        <ul className="text-gray-700 space-y-1 mb-0">
-                          <li>• Properly categorizing COGS vs. OpEx</li>
-                          <li>• Documenting owner-related add-backs</li>
-                          <li>• Reconciling the last 3 months of bank statements</li>
+                        <ul className="text-gray-700 space-y-1 mb-0 list-disc ml-5">
+                          <li>Properly categorizing COGS vs. OpEx</li>
+                          <li>Documenting owner-related add-backs</li>
+                          <li>Reconciling the last 3 months of bank statements</li>
                         </ul>
                       </div>
 
-                      <div className="my-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-md">
-                        <h4 className="font-semibold text-livmo-navy mb-2 flex items-center">
-                          <span className="text-2xl mr-3">🚀</span>
+                      <div className="my-6 p-6 bg-gray-50 border-l-4 border-green-600 rounded-md">
+                        <h4 className="font-semibold text-livmo-navy mb-2">
                           Clean Books Accelerate Everything
                         </h4>
                         <p className="text-gray-700 mb-2">
@@ -247,9 +244,8 @@ export default function FinancialReportingPage() {
                   </p>
 
                   {/* Concept 1: P&L vs Balance Sheet */}
-                  <div id="pl-vs-balance-sheet" className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <TrendingUp className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div id="pl-vs-balance-sheet" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       1. P&L vs. Balance Sheet
                     </h3>
                     <div className="space-y-3 text-gray-700">
@@ -269,9 +265,8 @@ export default function FinancialReportingPage() {
                   </div>
 
                   {/* Concept 2: Cash vs Accrual */}
-                  <div id="cash-vs-accrual" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <DollarSign className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div id="cash-vs-accrual" className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       2. Cash vs. Accrual Accounting
                     </h3>
                     <div className="space-y-3 text-gray-700">
@@ -293,9 +288,8 @@ export default function FinancialReportingPage() {
                   </div>
 
                   {/* Concept 3: Revenue Recognition */}
-                  <div id="revenue-recognition" className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <FileSpreadsheet className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div id="revenue-recognition" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       3. Revenue Recognition
                     </h3>
                     <div className="space-y-3 text-gray-700">
@@ -317,9 +311,8 @@ export default function FinancialReportingPage() {
                   </div>
 
                   {/* Concept 4: Add-Backs */}
-                  <div id="add-backs" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <CheckCircle2 className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div id="add-backs" className="mb-10 p-6 bg-gray-50 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       4. Add-Backs
                     </h3>
                     <div className="space-y-3 text-gray-700">
@@ -345,9 +338,8 @@ export default function FinancialReportingPage() {
                   </div>
 
                   {/* Concept 5: SDE & EBITDA */}
-                  <div id="sde-ebitda" className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <TrendingUp className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div id="sde-ebitda" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       5. SDE & Adjusted EBITDA
                     </h3>
                     <div className="space-y-3 text-gray-700">
@@ -387,7 +379,7 @@ export default function FinancialReportingPage() {
                       
                       <div className="space-y-2">
                         <div className="flex justify-between items-center py-2 border-b border-white/10">
-                          <span className="font-semibold">📈 REVENUE</span>
+                          <span className="font-semibold">REVENUE</span>
                           <span className="font-bold">$1,200,000</span>
                         </div>
                         <div className="flex justify-between pl-4 text-sm text-gray-300">
@@ -400,7 +392,7 @@ export default function FinancialReportingPage() {
                         </div>
                         
                         <div className="flex justify-between items-center py-2 border-b border-white/10">
-                          <span className="font-semibold">💰 COST OF GOODS SOLD</span>
+                          <span className="font-semibold">COST OF GOODS SOLD</span>
                           <span className="font-bold">($300,000)</span>
                         </div>
                         <div className="flex justify-between pl-4 text-sm text-gray-300">
@@ -413,7 +405,7 @@ export default function FinancialReportingPage() {
                         </div>
                         
                         <div className="flex justify-between items-center py-3 bg-white/10 px-4 rounded">
-                          <span className="font-bold">📊 GROSS PROFIT</span>
+                          <span className="font-bold">GROSS PROFIT</span>
                           <div className="text-right">
                             <div className="font-bold">$900,000</div>
                             <div className="text-sm text-livmo-gold">75% Margin</div>
@@ -421,7 +413,7 @@ export default function FinancialReportingPage() {
                         </div>
                         
                         <div className="flex justify-between items-center py-2 border-b border-white/10 mt-4">
-                          <span className="font-semibold">💼 OPERATING EXPENSES</span>
+                          <span className="font-semibold">OPERATING EXPENSES</span>
                           <span className="font-bold">($600,000)</span>
                         </div>
                         <div className="flex justify-between pl-4 text-sm text-gray-300">
@@ -438,7 +430,7 @@ export default function FinancialReportingPage() {
                         </div>
                         
                         <div className="flex justify-between items-center py-3 bg-livmo-gold/20 px-4 rounded mt-4">
-                          <span className="font-bold">✅ NET PROFIT</span>
+                          <span className="font-bold">NET PROFIT</span>
                           <div className="text-right">
                             <div className="font-bold">$300,000</div>
                             <div className="text-sm text-livmo-gold">25% Net Margin</div>
@@ -450,7 +442,7 @@ export default function FinancialReportingPage() {
 
                   {/* Revenue Deep-Dive */}
                   <div id="revenue" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">📈 Revenue - Deep Dive</h3>
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Revenue - Deep Dive</h3>
                     <div className="space-y-4 text-gray-700">
                       <div>
                         <strong className="text-livmo-navy block mb-2">What It Includes:</strong>
@@ -485,7 +477,7 @@ export default function FinancialReportingPage() {
 
                   {/* COGS Deep-Dive */}
                   <div id="cogs" className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">💰 Cost of Goods Sold (COGS) - Deep Dive</h3>
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Cost of Goods Sold (COGS) - Deep Dive</h3>
                     <div className="space-y-4 text-gray-700">
                       <div>
                         <strong className="text-livmo-navy block mb-2">What It Includes:</strong>
@@ -512,7 +504,7 @@ export default function FinancialReportingPage() {
 
                   {/* Gross Margins */}
                   <div id="gross-margins" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">📊 Gross Margins - Deep Dive</h3>
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Gross Margins - Deep Dive</h3>
                     <div className="space-y-4 text-gray-700">
                       <div>
                         <strong className="text-livmo-navy block mb-2">Calculation:</strong>
@@ -536,7 +528,7 @@ export default function FinancialReportingPage() {
 
                   {/* Operating Expenses */}
                   <div id="opex" className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">💼 Operating Expenses (OpEx) - Deep Dive</h3>
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Operating Expenses (OpEx) - Deep Dive</h3>
                     <div className="space-y-4 text-gray-700">
                       <div>
                         <strong className="text-livmo-navy block mb-2">Core Buckets:</strong>
@@ -559,7 +551,7 @@ export default function FinancialReportingPage() {
 
                   {/* Net Profit */}
                   <div id="net-profit" className="mb-10 p-6 bg-white border border-gray-200 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">✅ Net Profit & Flow-Through - Deep Dive</h3>
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Net Profit & Flow-Through - Deep Dive</h3>
                     <div className="space-y-4 text-gray-700">
                       <div>
                         <strong className="text-livmo-navy block mb-2">What Drives Profit:</strong>
@@ -581,9 +573,8 @@ export default function FinancialReportingPage() {
                   </p>
 
                   {/* Bank-to-Book */}
-                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-primary rounded-md shadow-sm">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <Shield className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-primary rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       1. Bank-to-Book Reconciliation
                     </h3>
                     <div className="space-y-4 text-gray-700">
@@ -625,8 +616,7 @@ export default function FinancialReportingPage() {
 
                   {/* ARR/MRR vs Deposits */}
                   <div className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <TrendingUp className="h-6 w-6 mr-3 text-livmo-primary" />
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       2. ARR/MRR vs. Deposits Reconciliation
                     </h3>
                     <div className="space-y-4 text-gray-700">
@@ -667,9 +657,8 @@ export default function FinancialReportingPage() {
                   </div>
 
                   {/* Prepaids & Deferrals */}
-                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-gold rounded-md shadow-sm">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <Calendar className="h-6 w-6 mr-3 text-livmo-primary" />
+                  <div className="mb-10 p-6 bg-white border-l-4 border-livmo-gold rounded-md">
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       3. Prepaids & Deferrals Roll-forwards
                     </h3>
                     <div className="space-y-4 text-gray-700">
@@ -711,8 +700,7 @@ export default function FinancialReportingPage() {
 
                   {/* AR vs Revenue */}
                   <div className="mb-10 p-6 bg-gray-50 rounded-md">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4 flex items-center">
-                      <FileText className="h-6 w-6 mr-3 text-livmo-primary" />
+                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">
                       4. Accounts Receivable vs. Revenue Booked
                     </h3>
                     <div className="space-y-4 text-gray-700">
@@ -760,8 +748,7 @@ export default function FinancialReportingPage() {
                   <div className="grid gap-6">
                     {/* Consulting Catch-All */}
                     <div className="p-6 bg-yellow-50 border-l-4 border-yellow-500 rounded-md">
-                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
-                        <AlertTriangle className="h-5 w-5 mr-2 text-yellow-600" />
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3">
                         "Consulting" Catch-All Traps
                       </h3>
                       <div className="text-gray-700">
@@ -771,9 +758,8 @@ export default function FinancialReportingPage() {
                     </div>
 
                     {/* Owner Expenses */}
-                    <div className="p-6 bg-blue-50 border-l-4 border-livmo-primary rounded-md">
-                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
-                        <Lightbulb className="h-5 w-5 mr-2 text-livmo-primary" />
+                    <div className="p-6 bg-gray-50 border-l-4 border-livmo-primary rounded-md">
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3">
                         Transparent Owner-Expense Categorization
                       </h3>
                       <div className="text-gray-700">
@@ -783,9 +769,8 @@ export default function FinancialReportingPage() {
                     </div>
 
                     {/* Quick Wins */}
-                    <div className="p-6 bg-green-50 border-l-4 border-green-500 rounded-md">
-                      <h3 className="text-xl font-semibold text-livmo-navy mb-3 flex items-center">
-                        <CheckCircle2 className="h-5 w-5 mr-2 text-green-600" />
+                    <div className="p-6 bg-green-50 border-l-4 border-green-600 rounded-md">
+                      <h3 className="text-xl font-semibold text-livmo-navy mb-3">
                         Quick-Win Blind-Spot Closures
                       </h3>
                       <div className="text-gray-700">
