@@ -722,7 +722,7 @@ export default function FinancialReportingPage() {
                       </div>
                       <div>
                         <strong className="text-livmo-navy block mb-2">Why It Matters:</strong>
-                        <p>Stale AR (>90 days) may indicate revenue recognition issues or collection problems—both major red flags.</p>
+                        <p>Stale AR (&gt;90 days) may indicate revenue recognition issues or collection problems—both major red flags.</p>
                       </div>
                       <div className="bg-white p-4 rounded border border-gray-200">
                         <strong className="text-livmo-navy block mb-2">How To Do It:</strong>
