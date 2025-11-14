@@ -864,125 +864,156 @@ export default function FinancialReportingPage() {
                 <div id="templates" className="mb-16">
                   <h2 className="text-3xl font-bold font-headline text-livmo-navy mb-6">Templates & Downloads</h2>
                   <p className="text-lg text-gray-600 mb-8">
-                    All templates are free and ready to use. Download individually or get the complete toolkit.
+                    All resources are available in our Google Drive folder. Download the files that are most relevant to your needs.
                   </p>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {/* Template Card 1 */}
+                    {/* P&L 101 Guide */}
                     <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-livmo-primary/10 rounded-md flex items-center justify-center">
-                          <Download className="h-6 w-6 text-livmo-primary" />
+                          <FileText className="h-6 w-6 text-livmo-primary" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Reconciliation Spreadsheets</h3>
-                          <p className="text-sm text-gray-600 mb-4">Bank, AR, and deferrals templates with pre-formatted formulas</p>
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">The P&L 101</h3>
+                          <p className="text-sm text-gray-600 mb-4">A Guide to Increasing Your Company's Exit Valuation</p>
                           <Link
                             href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
                           >
-                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                            Download Google Doc <ExternalLink className="ml-1 h-4 w-4" />
                           </Link>
                         </div>
                       </div>
                     </div>
 
-                    {/* Template Card 2 */}
+                    {/* Exit Valuation Deep Dive */}
                     <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-livmo-gold/20 rounded-md flex items-center justify-center">
-                          <FileSpreadsheet className="h-6 w-6 text-livmo-gold" />
+                          <TrendingUp className="h-6 w-6 text-livmo-gold" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Variance-Analysis Workbook</h3>
-                          <p className="text-sm text-gray-600 mb-4">Multi-sheet model for revenue and expense variance tracking</p>
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Exit Valuation Deep Dive</h3>
+                          <p className="text-sm text-gray-600 mb-4">Unlocking Value with Revenue Recognition & Recurring Revenue</p>
                           <Link
                             href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
                           >
-                            Download <ExternalLink className="ml-1 h-4 w-4" />
+                            Download Google Doc <ExternalLink className="ml-1 h-4 w-4" />
                           </Link>
                         </div>
                       </div>
                     </div>
 
-                    {/* Template Card 3 */}
-                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center">
-                          <CheckCircle2 className="h-6 w-6 text-livmo-primary" />
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Month-End Checklist</h3>
-                          <p className="text-sm text-gray-600 mb-4">Day-by-day task list with RACI matrix embedded</p>
-                          <Link
-                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
-                          >
-                            Download <ExternalLink className="ml-1 h-4 w-4" />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Template Card 4 */}
+                    {/* Chart of Accounts - Excel */}
                     <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-green-50 rounded-md flex items-center justify-center">
-                          <FileText className="h-6 w-6 text-green-600" />
+                          <FileSpreadsheet className="h-6 w-6 text-green-600" />
                         </div>
                         <div className="flex-1">
-                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Chart of Accounts for SaaS</h3>
-                          <p className="text-sm text-gray-600 mb-4">SaaS-specific COA structure to properly separate COGS vs. OpEx and calculate premium metrics like Gross Margin, CAC, and LTV</p>
-                          <div className="flex flex-col gap-2">
-                            <Link
-                              href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
-                            >
-                              SaaS_COA_Detailed_v3.xlsx <ExternalLink className="ml-1 h-3 w-3" />
-                            </Link>
-                            <Link
-                              href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
-                            >
-                              Sample Chart of Accounts for a SaaS Company.txt <ExternalLink className="ml-1 h-3 w-3" />
-                            </Link>
-                          </div>
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">SaaS Chart of Accounts (Detailed)</h3>
+                          <p className="text-sm text-gray-600 mb-4">Complete Excel template with SaaS-specific account structure</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                          >
+                            SaaS_COA_Detailed_v3.xlsx <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Additional Resources Section */}
-                  <div className="mt-12 p-6 bg-gray-50 rounded-md border border-gray-200">
-                    <h3 className="text-xl font-semibold text-livmo-navy mb-4">Billing Infrastructure & Systems</h3>
-                    <p className="text-gray-700 mb-4">
-                      Choosing the right billing platform is critical for managing subscription lifecycles and avoiding engineering debt that constrains growth:
-                    </p>
-                    <ul className="text-sm text-gray-700 space-y-2 mb-4 list-disc ml-5">
-                      <li>Why a dedicated Billing Platform beats building in-house</li>
-                      <li>Managing proration, upgrades, and flexible pricing</li>
-                      <li>Aligning billing cycles with cash flow needs</li>
-                    </ul>
-                    <Link
-                      href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150"
-                    >
-                      Startup_Billing_Playbook_Part_1_Maxio.pdf
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
+                    {/* Chart of Accounts - Text */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-50 rounded-md flex items-center justify-center">
+                          <FileText className="h-6 w-6 text-livmo-primary" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Sample Chart of Accounts</h3>
+                          <p className="text-sm text-gray-600 mb-4">Text-based reference for SaaS company account structure</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                          >
+                            Sample Chart of Accounts for a SaaS Company.txt <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Billing Playbook Part 1 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-md flex items-center justify-center">
+                          <Download className="h-6 w-6 text-purple-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Billing Playbook Part 1</h3>
+                          <p className="text-sm text-gray-600 mb-4">Billing infrastructure and platform selection (Maxio)</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                          >
+                            Startup_Billing_Playbook_Part_1_Maxio.pdf <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Billing Playbook Part 2 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-md flex items-center justify-center">
+                          <Download className="h-6 w-6 text-purple-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Billing Playbook Part 2</h3>
+                          <p className="text-sm text-gray-600 mb-4">Pricing strategies and usage-based models (Maxio)</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                          >
+                            Startup_Billing_Playbook_Part_2_Maxio.pdf <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Billing Playbook Part 3 */}
+                    <div className="p-6 bg-white border border-gray-200 rounded-md hover:shadow-lg transition-shadow duration-150">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-purple-50 rounded-md flex items-center justify-center">
+                          <Download className="h-6 w-6 text-purple-600" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold text-livmo-navy mb-2">Billing Playbook Part 3</h3>
+                          <p className="text-sm text-gray-600 mb-4">Audit readiness and ASC 606 compliance (Maxio)</p>
+                          <Link
+                            href="https://drive.google.com/drive/folders/1FnPdg_vm5QT98_kiJlrvT4YmZsve0y9z"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center text-livmo-primary font-semibold hover:text-livmo-navy transition-colors duration-150 text-sm"
+                          >
+                            Startup_Billing_Playbook_Part_3_Maxio.pdf <ExternalLink className="ml-1 h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* External Resources */}
